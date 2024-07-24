@@ -29,20 +29,5 @@ Console.WriteLine($"{a} {b} {c} {c1} {c2} {d} {e} {s}");
 
 Console.WriteLine(String.Format(CultureInfo.InvariantCulture,"{0:0.000}", d));
 
-double pi = Math.PI;
-double r = 123;
-Console.Write("Podaj promień koła:  ");
-r = Convert.ToDouble(Console.ReadLine());
-
-int pole = Convert.ToInt32(2*pi*r);
-
-Console.WriteLine($"Obwód koła o promieniu {r} wynosi: {pole}");
-
-var x = 3;
-// x = 3.5;
-
-Console.WriteLine(x);
-
-
 
 
