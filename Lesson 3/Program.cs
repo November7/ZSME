@@ -1,29 +1,27 @@
-﻿// var inp = Console.ReadLine();
-// Console.WriteLine(inp);
-
-int x = 123;
-int y = 5321;
+﻿/************************************************/
+/*                Console.Write(Ln)             */
+/************************************************/
 
 
-// x^=y^=x^=y;
-// Console.WriteLine(x^=y);
-// Console.WriteLine(y^=x);
-// Console.WriteLine(x^=y);
+string imie = "Jan";
+string nazwisko = "Nowak";
 
 
+// Console.WriteLine(imie,nazwisko); // błędne użycie metody WriteLn (pierwszy argument to tekst formatowany, kolejne są opcjonalne, jako argumenty tekstu formatowanego)
 
-Console.WriteLine($"x: {x}, y: {y}");
+Console.Write(imie);
+Console.Write(" ");
+Console.WriteLine(nazwisko);
 
-// double pi = Math.PI;
-// double r = 123;
-// Console.Write("Podaj promień koła:  ");
-// r = Convert.ToDouble(Console.ReadLine());
 
-// int pole = Convert.ToInt32(2*pi*r);
+Console.WriteLine("{0} {1}",imie,nazwisko); //każdy kod w postaci {nr} musi odpowiadać kolejnemu argumentowi, w przeciwnym wypadku nastąpi wyjątek
+// Console.WriteLine("{0} {1} {2}",imie,nazwisko); //brak pokrycia dla argumentu {2} - wyjątek
 
-// Console.WriteLine($"Obwód koła o promieniu {r} wynosi: {pole}");
+// Tekst parsowany.
 
-// var x = 3;
-// // x = 3.5;
+string output = $"{nazwisko} {imie}";
+Console.WriteLine(output);
 
-// Console.WriteLine(x);
+// Bez dodatkowej zmiennej
+
+Console.WriteLine($"Nazwisko: {nazwisko}, Imię: {imie}");
