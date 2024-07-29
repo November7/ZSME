@@ -8,26 +8,27 @@
     "net8.0": []
   },
   "packageFolders": {
-    "C:\\Users\\MarcinKowalski\\.nuget\\packages\\": {}
+    "C:\\Users\\mkowa\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Dane lokalne\\Source\\CSharp\\CSharp\\Lesson 3\\Lesson 3.csproj",
+      "projectUniqueName": "C:\\Dane lokalne\\Marcin\\Source\\CSharp\\Lesson 3\\Lesson 3.csproj",
       "projectName": "Lesson 3",
-      "projectPath": "C:\\Dane lokalne\\Source\\CSharp\\CSharp\\Lesson 3\\Lesson 3.csproj",
-      "packagesPath": "C:\\Users\\MarcinKowalski\\.nuget\\packages\\",
-      "outputPath": "C:\\Dane lokalne\\Source\\CSharp\\CSharp\\Lesson 3\\obj\\",
+      "projectPath": "C:\\Dane lokalne\\Marcin\\Source\\CSharp\\Lesson 3\\Lesson 3.csproj",
+      "packagesPath": "C:\\Users\\mkowa\\.nuget\\packages\\",
+      "outputPath": "C:\\Dane lokalne\\Marcin\\Source\\CSharp\\Lesson 3\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\MarcinKowalski\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\mkowa\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {}
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net8.0": {
