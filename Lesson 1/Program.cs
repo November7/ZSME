@@ -1,4 +1,9 @@
-﻿// using System;
+﻿/************************************************/
+/*                Pierwszy program              */
+/************************************************/
+
+
+// using System;
 
 // namespace mojaprzestrzen {
 //     class Lesson1
