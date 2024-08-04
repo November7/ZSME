@@ -39,3 +39,5 @@ Console.WriteLine(c.ToString( "n0",CultureInfo.InvariantCulture));
 // Ustawienia regionalne PL
 
 Console.WriteLine(String.Format(CultureInfo.InvariantCulture,"{0:0.000}", d));
+
+int abc;
