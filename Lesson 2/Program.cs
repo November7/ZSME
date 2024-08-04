@@ -43,4 +43,4 @@ Console.WriteLine(String.Format(CultureInfo.InvariantCulture,"{0:0.000}", d));
 int liczba = 123;
 float fliczba = liczba;
 Console.WriteLine(fliczba);
-
+Console.WriteLine(typeof(fliczba));
