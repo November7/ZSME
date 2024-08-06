@@ -1,2 +1,2 @@
 # Lekcja 1
-## Tworzenie pierwszego programu
+## Tworzenie pierwszego programu w języku C#
