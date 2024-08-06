@@ -1,2 +1,2 @@
 # C# Lessons
-./Lesson 1/
+[a relative link](Lesson 1)
