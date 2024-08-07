@@ -1,43 +1,27 @@
-﻿using System.Globalization;
-using System.Net.NetworkInformation;
-
-/************************************************/
-/*                Typy danych                   */
+﻿/************************************************/
+/*                Console.Write(Line)           */
 /************************************************/
 
-char a = 'a';
-// char a1 = 123;
-byte a2 = 255;
-sbyte a3 = 127;
-bool b = true;
-int c = 2_147_483_647; 
-short c1 = 32767;
-long c2 = 9_223_372_036_854_775_807;
-ushort c3 = 65535;
-uint c4 = 4_294_967_295;
-ulong c5 = 18_446_744_073_709_551_615;
 
-float d = 3.14f;
-double e = 3.14;
-string s = "";
+string imie = "Jan";
+string nazwisko = "Nowak";
 
 
-Console.WriteLine("{0} {1} {2} {3} {4} {5} {6}, {7}",a,b,c,c1,c2,d,e,s);
+// Console.WriteLine(imie,nazwisko); // błędne użycie metody WriteLn (pierwszy argument to tekst formatowany, kolejne są opcjonalne, jako argumenty tekstu formatowanego)
 
-// Formatowanie liczb: https://learn.microsoft.com/en-us/dotnet/standard/base-types/standard-numeric-format-strings
+Console.Write(imie);
+Console.Write(" ");
+Console.WriteLine(nazwisko);
 
-c = -123;
-Console.WriteLine("{0:0000000000}",c);
-Console.WriteLine("{0:b}",c);
-Console.WriteLine("{0:x}",c);
-Console.WriteLine("{0:X}",c);
-Console.WriteLine("{0:n}",c);
-Console.WriteLine("{0:C2}",c);
-Console.WriteLine(c.ToString( "C2", CultureInfo.CreateSpecificCulture("en-US")));
-Console.WriteLine(c.ToString( "n", CultureInfo.CreateSpecificCulture("pl-PL")));
-Console.WriteLine(c.ToString( "n0",CultureInfo.InvariantCulture));
-// Ustawienia regionalne PL
 
-Console.WriteLine(String.Format(CultureInfo.InvariantCulture,"{0:0.000}", d));
+Console.WriteLine("{0} {1}",imie,nazwisko); //każdy kod w postaci {nr} musi odpowiadać kolejnemu argumentowi, w przeciwnym wypadku nastąpi wyjątek
+// Console.WriteLine("{0} {1} {2}",imie,nazwisko); //brak pokrycia dla argumentu {2} - wyjątek
 
-int abc = 123;
+// Tekst parsowany.
+
+string output = $"{nazwisko} {imie}";
+Console.WriteLine(output);
+
+// Bez dodatkowej zmiennej
+
+Console.WriteLine($"Nazwisko: {nazwisko}, Imię: {imie}");
