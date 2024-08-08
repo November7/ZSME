@@ -12,7 +12,9 @@ System.Char c = 'c';
 char c1 = 'a'; //char to alias od System.Char
 Console.WriteLine($"{c}, {c1}");
 
-//char c2 = 123; // błąd konwersji int -> char
+//char c2 = 123; // błąd niejawnej konwersji int -> char
+// niejawna konwersja jest możliwa tylko z typu mniejszego do typu większego (gdy nie ma ryzyka utraty części danych). 
+// W pozostałych przypadkach konieczna jest jawna konwersja lub parsowanie
 char c2 = (char)123; // prawidłowa 'jawna' konwersja z int -> char
 //char c3 = char(123); // nieprawudłowa jawna konwesja w notacji funkcyjnej...
 Console.WriteLine(c2);
@@ -28,19 +30,21 @@ Console.WriteLine($"Min: {byte.MinValue}, Max: {byte.MaxValue}");
 int i1 = 2_147_483_647; //System.Int
 Console.WriteLine($"{i1}  <{int.MinValue}, {int.MaxValue}>");
 
-// uint c4 = 4_294_967_295;
-// long c2 = 9_223_372_036_854_775_807;
-// short c1 = 32767;
-// ushort c3 = 65535;
-// ulong c5 = 18_446_744_073_709_551_615;
+// uint i2 = 4_294_967_295;
+// short i4 = 32767;
+// ushort i5 = 65535;
+// long i3 = 9_223_372_036_854_775_807;
+// ulong i6 = 18_446_744_073_709_551_615;
 
+bool b = true; // true/false
+Console.WriteLine($"{b}");
 
-// bool b = true;
+float f1 = 3.14f; // lub 3.14F
+double f2 = 3.14; // lub 3.14g lub 3.14G
+decimal f3 = 3.14m; // lub 3.14M
 
+Console.WriteLine($"{f1} {f2} {f3}");
 
-
-// float d = 3.14f;
-// double e = 3.14;
 // string s = "";
 
 
