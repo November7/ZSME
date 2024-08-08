@@ -13,6 +13,7 @@ Console.Write(imie);
 Console.Write(" ");
 Console.WriteLine(nazwisko);
 
+Console.WriteLine(imie + " " + nazwisko); //konkatenacja jest możliwa dla większości typów danych
 
 Console.WriteLine("{0} {1}",imie,nazwisko); //każdy kod w postaci {nr} musi odpowiadać kolejnemu argumentowi, w przeciwnym wypadku nastąpi wyjątek
 // Console.WriteLine("{0} {1} {2}",imie,nazwisko); //brak pokrycia dla argumentu {2} - wyjątek
