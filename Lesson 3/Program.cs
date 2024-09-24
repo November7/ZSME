@@ -71,3 +71,8 @@ Console.WriteLine($"{f1} {f2} {f3}");
 
 // double flo = 123.10000000000001; //ale już nie double flo = 123.000000000000001;
 // Console.WriteLine($"{flo}");
+
+
+int? zmienna = null;
+
+Console.WriteLine($"Wartość zmiennej: {zmienna}");

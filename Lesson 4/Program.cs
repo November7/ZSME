@@ -6,8 +6,13 @@
 string inp = Console.ReadLine();
 Console.WriteLine(inp);
 
+// 
+
 int liczba;
 int.TryParse(inp,out liczba);
+
+// int liczba = int.Parse(inp);
+// int.TryParse(inp, out liczba);
 
 Console.WriteLine($"Liczba podana: {liczba}");
 
