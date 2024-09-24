@@ -6,6 +6,13 @@
 string inp = Console.ReadLine();
 Console.WriteLine(inp);
 
+// try{
+
+// }
+// catch (Exception e)
+// {
+//     Console.WriteLine($"Wystąpił wyjątek: {e.Message}");
+// }
 // 
 
 int liczba;
