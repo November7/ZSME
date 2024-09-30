@@ -76,3 +76,18 @@ Console.WriteLine($"{f1} {f2} {f3}");
 int? zmienna = null;
 
 Console.WriteLine($"Wartość zmiennej: {zmienna}");
+
+
+int[] T = [1,2,3];
+
+foreach(int i in T)
+    Console.WriteLine(i);
+
+
+string[] vowels = ["a", "e", "i", "o", "u"];
+string[] consonants = ["b", "c", "d", "f", "g", "h", "j", "k", "l", "m",
+                       "n", "p", "q", "r", "s", "t", "v", "w", "x", "z"];
+string[] alphabet = [.. vowels, .. consonants, "y"];
+
+foreach(string s in alphabet)
+    Console.WriteLine(s);

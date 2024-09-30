@@ -32,9 +32,11 @@ Console.WriteLine($"Nazwisko: {nazwisko}, Imię: {imie}");
 /*                Console.ReadLine()            */
 /************************************************/
 
-string inp = Console.ReadLine();
+string? inp = Console.ReadLine();
 
-if (inp!= null)
+// Console.WriteLine($"Wprowadzono: {inp}");
+
+if (inp != null)
 {
     Console.WriteLine($"Wprowadzono: {inp}");
 }
