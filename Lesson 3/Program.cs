@@ -76,3 +76,19 @@ Console.WriteLine($"{f1} {f2} {f3}");
 int? zmienna = null;
 
 Console.WriteLine($"Wartość zmiennej: {zmienna}");
+
+
+int[] T = [1,2,3];
+
+foreach(int i in T)
+    Console.WriteLine(i);
+
+
+int[] row0 = [1, 2, 3];
+int[] row1 = [4, 5, 6];
+int[] row2 = [7, 8, 9];
+int[] single = [.. row0, .. row1, .. row2];
+foreach (var element in single)
+{
+    Console.Write($"{element}, ");
+}
