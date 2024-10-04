@@ -5,14 +5,15 @@
 
 // using System;
 
-// namespace mojaprzestrzen {
+// namespace mojaprzestrzen 
+// {
 //     class Lesson1
 //     {
-//         static void Main()
+//         static int Main()
 //         {
 //             System.String message = "This is lesson 1.";
 //             System.Console.WriteLine(message);
-
+//             return 0;
 //         }
 //     }
 // }
