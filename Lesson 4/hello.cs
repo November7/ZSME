@@ -1,4 +1,4 @@
-namespace myproject
+namespace myProject
 {
     partial class App
     {

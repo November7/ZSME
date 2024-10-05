@@ -1,10 +1,14 @@
-﻿namespace myproject
+﻿using myFeatures;
+
+namespace myProject
 {
+   
     partial class App
     {
-        static void Main()
+        public static void Main()
         {
             SayHello();
+            Features.SayGoodBye();
         }
     }
 }
