@@ -1,4 +1,4 @@
-# Lekcja 2
+# Lekcja 3
 
 ## Typy danych
 

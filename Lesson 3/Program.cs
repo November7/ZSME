@@ -1,111 +1,71 @@
-﻿// using System;
-class Sample
+﻿/************************************************/
+/*                Typy danych                   */
+/************************************************/
+class App
 {
-    enum Color {Yellow = 1, Blue, Green};
-    static DateTime thisDate = DateTime.Now;
-
-    public static void Main()
+    static void Main()
     {
-        Console.Clear();
+        //Definicja typu znakowego:
+        System.Char c1 = 'c'; 
+        char c2 = 'a'; //char to alias od System.Char
+        Console.WriteLine($"{c1}, {c2}");
 
-        // Format a negative integer or floating-point number in various ways.
-        Console.WriteLine("Standard Numeric Format Specifiers");
-        Console.WriteLine(
-            "(C) Currency: . . . . . . . . {0:C}\n" +
-            "(D) Decimal:. . . . . . . . . {0:D}\n" +
-            "(E) Scientific: . . . . . . . {1:E}\n" +
-            "(F) Fixed point:. . . . . . . {1:F}\n" +
-            "(G) General:. . . . . . . . . {0:G}\n" +
-            "    (default):. . . . . . . . {0} (default = 'G')\n" +
-            "(N) Number: . . . . . . . . . {0:N}\n" +
-            "(P) Percent:. . . . . . . . . {1:P}\n" +
-            "(R) Round-trip: . . . . . . . {1:R}\n" +
-            "(X) Hexadecimal:. . . . . . . {0:X}\n",
-            -123, -123.45f);
+        //char c2 = 123; // błąd niejawnej konwersji int -> char
+        // niejawna konwersja jest możliwa tylko z typu mniejszego do typu większego (gdy nie ma ryzyka utraty części danych). 
+        // W pozostałych przypadkach konieczna jest jawna konwersja lub parsowanie
 
-        // Format the current date in various ways.
-        Console.WriteLine("Standard DateTime Format Specifiers");
-        Console.WriteLine(
-            "(d) Short date: . . . . . . . {0:d}\n" +
-            "(D) Long date:. . . . . . . . {0:D}\n" +
-            "(t) Short time: . . . . . . . {0:t}\n" +
-            "(T) Long time:. . . . . . . . {0:T}\n" +
-            "(f) Full date/short time: . . {0:f}\n" +
-            "(F) Full date/long time:. . . {0:F}\n" +
-            "(g) General date/short time:. {0:g}\n" +
-            "(G) General date/long time: . {0:G}\n" +
-            "    (default):. . . . . . . . {0} (default = 'G')\n" +
-            "(M) Month:. . . . . . . . . . {0:M}\n" +
-            "(R) RFC1123:. . . . . . . . . {0:R}\n" +
-            "(s) Sortable: . . . . . . . . {0:s}\n" +
-            "(u) Universal sortable: . . . {0:u} (invariant)\n" +
-            "(U) Universal full date/time: {0:U}\n" +
-            "(Y) Year: . . . . . . . . . . {0:Y}\n",
-            thisDate);
+        char c3 = (char)123; // prawidłowa 'jawna' konwersja z int -> char
+        //char c3 = char(123); // nieprawidłowa jawna konwesja w notacji funkcyjnej...
+        Console.WriteLine(c3);
 
-        // Format a Color enumeration value in various ways.
-        Console.WriteLine("Standard Enumeration Format Specifiers");
-        Console.WriteLine(
-            "(G) General:. . . . . . . . . {0:G}\n" +
-            "    (default):. . . . . . . . {0} (default = 'G')\n" +
-            "(F) Flags:. . . . . . . . . . {0:F} (flags or integer)\n" +
-            "(D) Decimal number: . . . . . {0:D}\n" +
-            "(X) Hexadecimal:. . . . . . . {0:X}\n",
-            Color.Green);
+        byte b1 = 255; //System.Byte
+        sbyte b2 = -128;
+
+        Console.WriteLine($"{b1} {b2}");
+
+        //Min max typu danych
+        Console.WriteLine($"Min: {byte.MinValue}, Max: {byte.MaxValue}");
+
+        int i1 = 2_147_483_647; //System.Int
+        Console.WriteLine($"{i1} Min: <{int.MinValue}, Max: {int.MaxValue}>");
+
+        // uint i2 = 4_294_967_295;
+        // short i4 = 32767;
+        // ushort i5 = 65535;
+        // long i3 = 9_223_372_036_854_775_807;\
+        // ulong i6 = 18_446_744_073_709_551_615;
+
+        bool b = true; // true/false
+        Console.WriteLine($"{b}");
+
+        float f1 = 3.14f; // lub 3.14F
+        double f2 = 3.14; // lub 3.14g lub 3.14G
+        decimal f3 = 3.14m; // lub 3.14M
+
+        Console.WriteLine($"{f1} {f2} {f3}");
+
+        // string s = "";
+
+
+        // Console.WriteLine("{0} {1} {2} {3} {4} {5} {6}, {7}",a,b,c,c1,c2,d,e,s);
     }
 }
 
+/************************************************/
+/*                Zasięg zmiennych              */
+/************************************************/
+// class App
+// {
+//     static void Main()
+//     {
+//         // int x = 3;
 
+//         {
+//             int x;
+//             x = 3;
+//             Console.WriteLine(x);
+//         }
 
-// //         /************************************************/
-// //         /*   Formatowanie danych w Console.Write(Line)  */
-// //         /************************************************/
-
-// //         Console.Clear();
-        
-// //         // Format a negative integer or floating-point number in various ways.
-// //         Console.WriteLine("Standard Numeric Format Specifiers");
-// //         Console.WriteLine(
-// //             "(C) Currency: . . . . . . . . {0:C}\n" +
-// //             "(D) Decimal:. . . . . . . . . {0:D}\n" +
-// //             "(E) Scientific: . . . . . . . {1:E}\n" +
-// //             "(F) Fixed point:. . . . . . . {1:F}\n" +
-// //             "(G) General:. . . . . . . . . {0:G}\n" +
-// //             "    (default):. . . . . . . . {0} (default = 'G')\n" +
-// //             "(N) Number: . . . . . . . . . {0:N}\n" +
-// //             "(P) Percent:. . . . . . . . . {1:P}\n" +
-// //             "(R) Round-trip: . . . . . . . {1:R}\n" +
-// //             "(X) Hexadecimal:. . . . . . . {0:X}\n",
-// //             -123, -123.45f);
-
-// //         // Format the current date in various ways.
-// //         Console.WriteLine("Standard DateTime Format Specifiers");
-// //         Console.WriteLine(
-// //             "(d) Short date: . . . . . . . {0:d}\n" +
-// //             "(D) Long date:. . . . . . . . {0:D}\n" +
-// //             "(t) Short time: . . . . . . . {0:t}\n" +
-// //             "(T) Long time:. . . . . . . . {0:T}\n" +
-// //             "(f) Full date/short time: . . {0:f}\n" +
-// //             "(F) Full date/long time:. . . {0:F}\n" +
-// //             "(g) General date/short time:. {0:g}\n" +
-// //             "(G) General date/long time: . {0:G}\n" +
-// //             "    (default):. . . . . . . . {0} (default = 'G')\n" +
-// //             "(M) Month:. . . . . . . . . . {0:M}\n" +
-// //             "(R) RFC1123:. . . . . . . . . {0:R}\n" +
-// //             "(s) Sortable: . . . . . . . . {0:s}\n" +
-// //             "(u) Universal sortable: . . . {0:u} (invariant)\n" +
-// //             "(U) Universal full date/time: {0:U}\n" +
-// //             "(Y) Year: . . . . . . . . . . {0:Y}\n",
-// //             thisDate);
-
-// //         // Format a Color enumeration value in various ways.
-// //         Console.WriteLine("Standard Enumeration Format Specifiers");
-// //         Console.WriteLine(
-// //             "(G) General:. . . . . . . . . {0:G}\n" +
-// //             "    (default):. . . . . . . . {0} (default = 'G')\n" +
-// //             "(F) Flags:. . . . . . . . . . {0:F} (flags or integer)\n" +
-// //             "(D) Decimal number: . . . . . {0:D}\n" +
-// //             "(X) Hexadecimal:. . . . . . . {0:X}\n",
-// //             Color.Green);
+//         // Console.WriteLine(x);
 //     }
 // }

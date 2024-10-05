@@ -1,6 +1,5 @@
 namespace myFeatures
 {
-    
     class Features
     {
         public static void SayGoodBye()
