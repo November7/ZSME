@@ -14,20 +14,29 @@ class App
     {
         // Formatowanie typów liczbowych.
         //https://learn.microsoft.com/pl-pl/dotnet/standard/base-types/standard-numeric-format-strings
-        Console.WriteLine("specyfikatory konwersji numeryczne");
+        Console.WriteLine("Standardowe specyfikatory konwersji numeryczne");
         Console.WriteLine(
             "(C) Waluta: . . . . . . . . . . {0:C}\t{1:C}\n" +
             "(D) Dziesiętnie:. . . . . . . . {0:D}\n" +
             "(E) Notacja naukowa:  . . . . . {0:E}\t{1:E}\n" +
             "(F) Fixed point:. . . . . . . . {0:F}\t{1:F}\n" +  // np. {1:F4} - 4 cyfry po separatorze dziesiętnym
             "(G) Standardowy (domyśłny): . . {0:G}\t\t{1:G}\n" +
-            "(0) Liczba: . . . . . . . . . . {0:00000.00000}\t{1:00000.00000}\n" +
             "(N) Liczba: . . . . . . . . . . {0:N8}\t{1:N8}\n" +
             "(P) Procent:. . . . . . . . . . {0:P}\t{1:P}\n" +
             "(R) Round-trip: . . . . . . . . {0:R}\t{1:R}\n" + //formatowanie bezstratne dla double/float
             "(b) Binarnie: . . . . . . . . . {0:B}\n" +
             "(x) Szesnastkowo: . . . . . . . {0:x}\n" +
             "(X) Szesnastkowo: . . . . . . . {0:X}\n",
+            valInt, valDouble);
+
+
+        Console.WriteLine("Niestandardowe specyfikatory konwersji numeryczne");
+        Console.WriteLine(
+            
+            "(0) Liczba: . . . . . . . . . . {0:00000000.00000000}\t{1:00000000.00000000}\n" +
+            "(#) Liczba: . . . . . . . . . . {0:########.########}\t\t\t{1:########.########}\n",
+    
+            
             valInt, valDouble);
 
         // Formatowanie daty i czasu.
