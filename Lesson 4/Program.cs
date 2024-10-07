@@ -1,12 +1,13 @@
 ﻿/************************************************/
 /*   Formatowanie danych w Console.Write(Line)  */
 /************************************************/
-
+using System.Globalization;
 
 class App
 {
     static int valInt = -123456;
     static double valDouble = -123456.789012;
+    static int ujemna = -1, dodatnia = 1, zero = 0;
     enum Color {Yellow = 1, Blue, Green};
     static DateTime thisDate = DateTime.Now;
 
@@ -14,6 +15,7 @@ class App
     {
         // Formatowanie typów liczbowych.
         //https://learn.microsoft.com/pl-pl/dotnet/standard/base-types/standard-numeric-format-strings
+
         Console.WriteLine("Standardowe specyfikatory konwersji numeryczne");
         Console.WriteLine(
             "(C) Waluta: . . . . . . . . . . {0:C}\t{1:C}\n" +
@@ -34,10 +36,15 @@ class App
         Console.WriteLine(
             
             "(0) Liczba: . . . . . . . . . . {0:00000000.00000000}\t{1:00000000.00000000}\n" +
-            "(#) Liczba: . . . . . . . . . . {0:########.########}\t\t\t{1:########.########}\n",
-    
-            
-            valInt, valDouble);
+            "(#) Liczba: . . . . . . . . . . {0:########.########}\t\t\t{1:########.########}\n"+
+            "(E) Liczba: . . . . . . . . . . {0:########.########E+000}\t\t\t{1:########.########E+000}\n"+
+            "(%) Liczba: . . . . . . . . . . {0:########.########%}\t\t\t{1:########.########%}\n"+ 
+            "(,) Liczba: . . . . . . . . . . {0:########,########}\t\t\t{1:#,#.#######}\n"+
+            "(,,) Liczba:. . . . . . . . . . {0:########,########,}\t\t\t{1:########,########,}\n"+            
+            "(;) Liczba: . . . . . . . . . . {2:Ujemne: #;Dodatnie: #;OMG ZERO} {3:Ujemne: #;Dodatnie: #;OMG ZERO} {4:Ujemne: #;Dodatnie: #;OMG ZERO}\n",
+            valInt, valDouble,
+            ujemna, zero, dodatnia);
+        // \\ i @ \
 
         // Formatowanie daty i czasu.
         Console.WriteLine("Specyfikatory konwersji daty i czasu:");
@@ -49,9 +56,9 @@ class App
             "(M) Dzień, miesiąc: . . . . . . {0:M}\n" +
             "(Y) Miesiąc, rok: . . . . . . . {0:Y}\n" +            
             "(R) RFC1123:. . . . . . . . . . {0:R}\n" +
-            "(s) Sortable: . . . . . . . . . {0:s}\n" +
-            "(u) Universal sortable: . . . . {0:u} (invariant)\n" +
-            "(U) Universal full date/time: . {0:U}\n" +
+            "(s) Sortowalna: . . . . . . . . {0:s}\n" +
+            "(u) UTC sortowalny: . . . . . . {0:u}\n" +
+            "(U) UTC Pełna data/czas:. . . . {0:U}\n" +
             "(f) Pełna data/czas krótki: . . {0:f}\n" +
             "(F) Pełna data/czas długi:. . . {0:F}\n" +
             "(g) Domyślny data/czas krótki:. {0:g}\n" +
@@ -66,46 +73,33 @@ class App
             "(MMMM) Miesiąc: . . . . . . . . {0:MMMM}\n" +
             "(MMM) Miesiąc:  . . . . . . . . {0:MMM}\n" +
             "(MM) Miesiąc: . . . . . . . . . {0:MM}\n" +
-            "(DDDD) Miesiąc: . . . . . . . . {0:dddd}\n" +
-            "(DDD) Miesiąc:. . . . . . . . . {0:ddd}\n" +
+            "(dddd) Dzień: . . . . . . . . . {0:dddd}\n" +
+            "(ddd) Dzień:. . . . . . . . . . {0:ddd}\n" +
+            "(dd) Dzień: . . . . . . . . . . {0:dd}\n" +
             "(HH) Godzina: . . . . . . . . . {0:HH}\n" +
-            // "(HH) Godzina: . . . . . . . . . {0:HHH}\n" +
-            // "(DD) Miesiąc: . . . . . . . . . {0:h}\n" +
-            // "(DD) Miesiąc: . . . . . . . . . {0:mm}\n" +
-            // "(DD) Miesiąc: . . . . . . . . . {0:m}\n" +
-            "",
+            "(hh) Godzina: . . . . . . . . . {0:hh}\n" +
+            "(ss) Sekundy: . . . . . . . . . {0:ss}\n" +
+            "(ff) 0.1 Sekundy: . . . . . . . {0:ff}\n" +
+            "(fff) 0.01 Sekundy: . . . . . . {0:fff}\n" +
+            "(ffff) 0.001 Sekundy: . . . . . {0:ffff}\n",
             thisDate);    
 
         // Formatowanie typu wyliczeniowego.
         Console.WriteLine("Specyfikatory typów wyliczeniowych");
         Console.WriteLine(
             "(G) Standardowy (domyślny): . . {0:G}\n" +
-            "(F) Flagi:. . . . . . . . . . . {0:F} (flags or integer)\n" +
+            "(F) Flagi:. . . . . . . . . . . {0:F}\n" +
             "(D) Liczba dziesiętna:. . . . . {0:D}\n" +
             "(X) Szesnastkowo: . . . . . . . {0:X}\n",
             Color.Green);
 
 
+        //Nadpisanie ustawień regionalnych
 
-
-            // c = -123;
-// Console.WriteLine("{0:0000000000}",c);
-// Console.WriteLine("{0:b}",c);
-// Console.WriteLine("{0:x}",c);
-// Console.WriteLine("{0:X}",c);
-// Console.WriteLine("{0:n}",c);
-// Console.WriteLine("{0:C2}",c);
-// Console.WriteLine(c.ToString( "C2", CultureInfo.CreateSpecificCulture("en-US")));
-// Console.WriteLine(c.ToString( "n", CultureInfo.CreateSpecificCulture("pl-PL")));
-// Console.WriteLine(c.ToString( "n0",CultureInfo.InvariantCulture));
-// // Ustawienia regionalne PL
-
-// Console.WriteLine(String.Format(CultureInfo.InvariantCulture,"{0:0.000}", d));
-
-// decimal dec = 123.10000000000000001m;
-// Console.WriteLine(dec);
-
-// double flo = 123.10000000000001; //ale już nie double flo = 123.000000000000001;
-// Console.WriteLine($"{flo}");
+        double c = 3.14;            
+        Console.WriteLine(c.ToString( "C2", CultureInfo.CreateSpecificCulture("en-US")));
+        Console.WriteLine(c.ToString( "C2", CultureInfo.CreateSpecificCulture("pl-PL")));
+        Console.WriteLine(c.ToString( "N2", CultureInfo.InvariantCulture));
+        
     }
 }
