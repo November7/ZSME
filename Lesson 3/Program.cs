@@ -1,6 +1,7 @@
 ﻿/************************************************/
 /*                Typy danych                   */
 /************************************************/
+
 class App
 {
     static void Main()
@@ -32,7 +33,7 @@ class App
         // uint i2 = 4_294_967_295;
         // short i4 = 32767;
         // ushort i5 = 65535;
-        // long i3 = 9_223_372_036_854_775_807;\
+        // long i3 = 9_223_372_036_854_775_807;
         // ulong i6 = 18_446_744_073_709_551_615;
 
         bool b = true; // true/false
@@ -43,11 +44,9 @@ class App
         decimal f3 = 3.14m; // lub 3.14M
 
         Console.WriteLine($"{f1} {f2} {f3}");
-
-        // string s = "";
-
-
-        // Console.WriteLine("{0} {1} {2} {3} {4} {5} {6}, {7}",a,b,c,c1,c2,d,e,s);
+        Console.WriteLine($"float: ({float.MinValue}, {float.MaxValue})");
+        Console.WriteLine($"double: ({double.MinValue}, {double.MaxValue})");
+        Console.WriteLine($"decimal: ({decimal.MinValue}, {decimal.MaxValue})");
     }
 }
 
@@ -66,6 +65,6 @@ class App
 //             Console.WriteLine(x);
 //         }
 
-//         // Console.WriteLine(x);
+//         // Console.WriteLine(x); 
 //     }
 // }
