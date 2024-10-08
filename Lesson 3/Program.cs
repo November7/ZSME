@@ -98,19 +98,15 @@
 //     {
 //         int i = 3;
         
-//         for( i=0;i<10;i++)
-//         {
-            
-            
+//         for(int i=0;i<10;i++) //błąd zmienna i już została zdefiniowana w zewnętrznym zakresie
+//         {                   
 //             Console.WriteLine(i);
 //         }
 //         for( i=0;i<10;i++)
-//         {
-            
-            
+//         {                
 //             Console.WriteLine(i);
 //         }
 
-//         // Console.WriteLine(i); 
+//         Console.WriteLine(i); 
 //     }
 // }
