@@ -10,9 +10,11 @@
 //         System.Char c1 = 'c'; 
 //         char c2 = 'a'; //char to alias od System.Char
 //         Console.WriteLine($"{c1}, {c2}");
+//         // Console.WriteLine("{0}, {1}",c1,c2);
 
 //         //char c2 = 123; // błąd niejawnej konwersji int -> char
-//         // niejawna konwersja jest możliwa tylko z typu mniejszego do typu większego (gdy nie ma ryzyka utraty części danych). 
+//         // niejawna konwersja jest możliwa tylko z typu mniejszego do typu większego 
+//         //(gdy nie ma ryzyka utraty części danych). 
 //         // W pozostałych przypadkach konieczna jest jawna konwersja lub parsowanie
 
 //         char c3 = (char)123; // prawidłowa 'jawna' konwersja z int -> char
@@ -20,7 +22,7 @@
 //         Console.WriteLine(c3);
 
 //         byte b1 = 255; //System.Byte
-//         sbyte b2 = -128;
+//         sbyte b2 = -128; //127
 
 //         Console.WriteLine($"{b1} {b2}");
 
@@ -55,35 +57,35 @@
 /*                Konwersja typów               */
 /************************************************/
 
-class App
-{
-    static void Main()
-    {
-        Console.Write("Wprowadź liczbę: ");
-        string? inp = Console.ReadLine();
+// class App
+// {
+//     static void Main()
+//     {
+//         Console.Write("Wprowadź liczbę: ");
+//         string? inp = Console.ReadLine();
 
-        int nLiczba;
-        // nLiczba = int.Parse(inp); // Uwaga na wyjątki!!!
-        // Console.WriteLine($"Liczba: {nLiczba}");
+//         int nLiczba;
+//         // nLiczba = int.Parse(inp); // Uwaga na wyjątki!!!
+//         // Console.WriteLine($"Liczba: {nLiczba}");
 
-        bool ok = int.TryParse(inp, out nLiczba);
-        if (ok)
-        {
-            Console.WriteLine($"Liczba: {nLiczba}");
-        }
+//         bool ok = int.TryParse(inp, out nLiczba);
+//         if (ok)
+//         {
+//             Console.WriteLine($"Liczba: {nLiczba}");
+//         }
 
-        double dLiczba = nLiczba; // Konwersja prosta (niejawna)
-        Console.WriteLine($"Liczba (double): {dLiczba}");
+//         double dLiczba = nLiczba; // Konwersja prosta (niejawna)
+//         Console.WriteLine($"Liczba (double): {dLiczba}");
 
-        dLiczba = (double) nLiczba; // Konwersja jawna
-        Console.WriteLine($"Liczba (double): {dLiczba}");
+//         dLiczba = (double) nLiczba; // Konwersja jawna
+//         Console.WriteLine($"Liczba (double): {dLiczba}");
 
-        dLiczba = 3.14;
-        // nLiczba = dLiczba; // Konwersja niedozwolona
-        nLiczba = (int) dLiczba; // Konwersja wymagana
-        Console.WriteLine($"Liczba: {nLiczba}");
-    }
-}
+//         dLiczba = 3.14;
+//         // nLiczba = dLiczba; // Konwersja niedozwolona
+//         nLiczba = (int) dLiczba; // Konwersja wymagana
+//         Console.WriteLine($"Liczba: {nLiczba}");
+//     }
+// }
 
 
 
@@ -94,14 +96,21 @@ class App
 // {
 //     static void Main()
 //     {
-//         // int x = 3;
-
+//         int i = 3;
+        
+//         for( i=0;i<10;i++)
 //         {
-//             int x;
-//             x = 3;
-//             Console.WriteLine(x);
+            
+            
+//             Console.WriteLine(i);
+//         }
+//         for( i=0;i<10;i++)
+//         {
+            
+            
+//             Console.WriteLine(i);
 //         }
 
-//         // Console.WriteLine(x); 
+//         // Console.WriteLine(i); 
 //     }
 // }
