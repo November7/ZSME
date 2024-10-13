@@ -47,7 +47,7 @@ class App
         // \\ i @ \
 
         // Formatowanie daty i czasu.
-        Console.WriteLine("Specyfikatory konwersji daty i czasu:");
+        Console.WriteLine("Standardowe Specyfikatory konwersji daty i czasu:");
         Console.WriteLine(
             "(t) Czas krótki:. . . . . . . . {0:t}\n" +
             "(T) Czas długi: . . . . . . . . {0:T}\n" +
@@ -78,10 +78,11 @@ class App
             "(dd) Dzień: . . . . . . . . . . {0:dd}\n" +
             "(HH) Godzina: . . . . . . . . . {0:HH}\n" +
             "(hh) Godzina: . . . . . . . . . {0:hh}\n" +
+            "(mm) Minuta: . . . . . . . . . {0:mm}\n" +
             "(ss) Sekundy: . . . . . . . . . {0:ss}\n" +
-            "(ff) 0.1 Sekundy: . . . . . . . {0:ff}\n" +
-            "(fff) 0.01 Sekundy: . . . . . . {0:fff}\n" +
-            "(ffff) 0.001 Sekundy: . . . . . {0:ffff}\n",
+            "(ff) 0.01 Sekundy: . . . . . . . {0:ff}\n" +
+            "(fff) 0.001 Sekundy: . . . . . . {0:fff}\n" +
+            "(ffff) 0.0001 Sekundy: . . . . . {0:ffff}\n",
             thisDate);    
 
         // Formatowanie typu wyliczeniowego.
