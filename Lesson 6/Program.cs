@@ -1,11 +1,12 @@
-﻿// class App
+﻿// using System.Runtime.CompilerServices;
+
+// class App
 //  {
 //     static void Main()
 //     {
 //         //Instrukcja warunkowa:
 
 //         int nLiczba = 5;
-
 
 //         if (nLiczba % 2 == 0)
 //         {
