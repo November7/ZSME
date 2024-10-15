@@ -12,7 +12,7 @@
 //         Console.WriteLine($"{c1}, {c2}");
 //         // Console.WriteLine("{0}, {1}",c1,c2);
 
-//         //char c2 = 123; // błąd niejawnej konwersji int -> char
+//         // char c2 = 123; // błąd niejawnej konwersji int -> char
 //         // niejawna konwersja jest możliwa tylko z typu mniejszego do typu większego 
 //         //(gdy nie ma ryzyka utraty części danych). 
 //         // W pozostałych przypadkach konieczna jest jawna konwersja lub parsowanie
@@ -92,21 +92,23 @@
 /************************************************/
 /*                Zasięg zmiennych              */
 /************************************************/
-// class App
-// {
-//     static void Main()
-//     {
-//         int i = 3;
+class App
+{
+    static void Main()
+    {
+        int i = 3;
         
-//         for(int i=0;i<10;i++) //błąd zmienna i już została zdefiniowana w zewnętrznym zakresie
-//         {                   
-//             Console.WriteLine(i);
-//         }
-//         for( i=0;i<10;i++)
-//         {                
-//             Console.WriteLine(i);
-//         }
+        // for(int i=0;i<10;i++) //błąd zmienna i już została zdefiniowana w zewnętrznym zakresie
+        // {                   
+        //     Console.WriteLine(i);
+        // }
+        
+        for(i=0;i<10;i++)
+        {                
+            Console.WriteLine(i);
+        }
 
-//         Console.WriteLine(i); 
-//     }
-// }
+
+        // Console.WriteLine(i); 
+    }
+}
