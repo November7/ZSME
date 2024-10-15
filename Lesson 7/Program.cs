@@ -69,6 +69,17 @@
             Console.WriteLine($"Liczba: {i}");
             
         }
-        
+
+        //licznik pętli for, co zrobi break??
+
+        int licznik;
+
+        for (licznik = 0; licznik < 10; licznik++)
+        {
+            if(licznik == 5) break;
+
+            Console.WriteLine($"Iteracja: {licznik}");
+        }   
+        Console.WriteLine($"Licznik po użyciu break: {licznik}");     
     }
 }
