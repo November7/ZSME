@@ -1,13 +1,8 @@
-﻿// using System.Globalization;
-//Typy agregacyjne
-
-using Microsoft.VisualBasic.FileIO;
-
+﻿
 class App
 {
     static void Main()
     {     
-
         //String
         string strTekst1 = "Jakiś przykładowy tekst";        
         Console.WriteLine(strTekst1);
@@ -49,11 +44,12 @@ class App
         Console.WriteLine("C:\\windows\\system32\\");
         Console.WriteLine(@"C:\windows\system32\");
         Console.WriteLine(@"tekst który jest 
-                            zapisany w kilku liniach");
+                            zapisany w kilku
+                             liniach");
 
 
-        //Najważniejsze metody i właściwości String:
-        //
+        // Najważniejsze metody i właściwości String:
+        
 
         Console.WriteLine($"Długość tekstu: {strTekst1.Length}");
         Console.WriteLine($"Fragment tekstu: {strTekst1.Substring(5)}, {strTekst1.Substring(3,7)}");
@@ -77,9 +73,9 @@ class App
         Console.WriteLine($"Formatowanie tekstu: {string.Format(" {0:C}, {1:x04}, {1:b010}", 123.321, 123)}");
 
                
-
-        //Tablica
+        // Tablica
         int[] arrLiczby = new int[10];
+
         for (int i = 0; i < 10; i++)
         {
             arrLiczby[i] = random.Next(10);
@@ -109,7 +105,7 @@ class App
         }
         Console.WriteLine();
 
-        //tablice wielowymiarowe
+        // tablice wielowymiarowe
         int[,] arrMatrix1 = new int[3, 4];
         for (int i = 0; i < 3; i++)
         {
@@ -154,10 +150,7 @@ class App
 
 
         int[][] arrJagged3 = [[1,2], [1,3,2,4,5]];
-        // int[][] arrJagged3 = {{1,2,3},{4,5,6}}; //niepoprawnie
-
-
-
+        // // int[][] arrJagged3 = {{1,2,3},{4,5,6}}; //niepoprawnie
 
         int[] t1 = {1,2,3,4,5,6};
         int[] t2 = t1;
@@ -198,7 +191,7 @@ class App
         }
         Console.WriteLine();
 
-        //CopyTo
+        // //CopyTo
 
         
         int[] t4 = new int[10];
