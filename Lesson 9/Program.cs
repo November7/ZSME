@@ -1,44 +1,8 @@
-﻿using System.Globalization;
-//Typy agregacyjne
-
-class App
+﻿class App
 {
     static void Main()
     {
-        Random random = new Random(); 
-
-        //String
-        string strTekst = "Jakiś przykładowy tekst";
-        Console.WriteLine(strTekst);
-        foreach (var item in strTekst)
-        {
-            Console.Write($"{item}, ");
-        }
-        Console.WriteLine();
-
-        //Tablica
-        int[] arrLiczby = new int[10];
-        for (int i = 0; i < 10; i++)
-        {
-            arrLiczby[i] = random.Next(10);
-        }
-
-        foreach (var item in arrLiczby)
-        {
-            Console.Write($"{item}, ");
-        }
-        Console.WriteLine();
-
-        // arrLiczby[10] = 123; //wyjątek!!!
-        
-        int[] arrLiczby2 = {1, 3, 4, 3, 5, 6, 7, 3, 3, 5, 7, 4, 3};
-
-        foreach (var item in arrLiczby2)
-        {
-            Console.Write($"{item}, ");
-        }
-        Console.WriteLine();
-
+        Random random = new Random();
         //Lista
         List<int> Lista1 = new List<int>();
         for (int i = 0; i < 10; i++)
@@ -108,10 +72,6 @@ class App
             Console.Write($"{item}, ");
         }
         Console.WriteLine();
-
-     
-   
-
     }
 
 }
