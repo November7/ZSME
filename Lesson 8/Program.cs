@@ -47,9 +47,7 @@ class App
                             zapisany w kilku
                              liniach");
 
-
         // Najważniejsze metody i właściwości String:
-        
 
         Console.WriteLine($"Długość tekstu: {strTekst1.Length}");
         Console.WriteLine($"Fragment tekstu: {strTekst1.Substring(5)}, {strTekst1.Substring(3,7)}");
@@ -67,13 +65,11 @@ class App
         }     
 
         Console.WriteLine($"Łączenie tekstów: {string.Join("|",podteksty)}");
-
         Console.WriteLine($"Konkatenacja: {string.Concat("jeden tekst"," ---- ","trzeci tekst")}");
-
         Console.WriteLine($"Formatowanie tekstu: {string.Format(" {0:C}, {1:x04}, {1:b010}", 123.321, 123)}");
-
                
         // Tablica
+
         int[] arrLiczby = new int[10];
 
         for (int i = 0; i < 10; i++)
@@ -106,6 +102,7 @@ class App
         Console.WriteLine();
 
         // tablice wielowymiarowe
+
         int[,] arrMatrix1 = new int[3, 4];
         for (int i = 0; i < 3; i++)
         {
@@ -150,7 +147,8 @@ class App
 
 
         int[][] arrJagged3 = [[1,2], [1,3,2,4,5]];
-        // // int[][] arrJagged3 = {{1,2,3},{4,5,6}}; //niepoprawnie
+
+        // int[][] arrJagged3 = {{1,2,3},{4,5,6}}; //niepoprawnie
 
         int[] t1 = {1,2,3,4,5,6};
         int[] t2 = t1;
@@ -191,8 +189,7 @@ class App
         }
         Console.WriteLine();
 
-        // //CopyTo
-
+        //CopyTo
         
         int[] t4 = new int[10];
         t3.CopyTo(t4, 3); 
@@ -203,7 +200,8 @@ class App
         Console.WriteLine();
 
         Array.Sort(t4);
-        // Array.Reverse(t4);
+        Array.Reverse(t4);
+        
         for (int i = 0; i < t4.Length; i++)
         {         
             Console.Write($"{t4[i]}, ");
@@ -211,7 +209,5 @@ class App
         Console.WriteLine();
 
         Console.WriteLine($"Pierwsze/ostatnie wystąpienie wartości: {Array.IndexOf(t4,3)} {Array.IndexOf(t4,332)} {Array.LastIndexOf(t4,3)}");        
-        
     }
-
 }
