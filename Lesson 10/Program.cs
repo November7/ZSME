@@ -109,7 +109,31 @@ class App
         }
         Console.WriteLine();
 
-     
+        HashSet<double> Zbior2 = [1,2,3,4,5,6,7];
+        foreach (var item in Zbior2)
+        {
+            Console.Write($"{item}, ");
+        }
+        Console.WriteLine();
+
+        int[] arr = {1,2,3,4,5,6,7};
+        HashSet<int> Zbior3 = new HashSet<int>(arr);
+
+
+        //Słownik
+
+        Dictionary<string, int> slownik = new Dictionary<string, int>();
+        slownik["jeden"] = 1;
+        slownik["dwa"] = 2;
+        slownik["trzy"] = 3;
+
+        foreach (var item in slownik)
+        {
+            Console.WriteLine($"{item.Key} - {item.Value}");
+        }
+        Console.WriteLine(slownik["jeden"]);
+
+        foreach (var )
    
 
     }

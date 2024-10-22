@@ -8,7 +8,7 @@
 
 //         int nLiczba = 5;
 
-//         if (nLiczba % 2 == 0)
+//         if (nLiczba % 2 == 0) 
 //         {
 //             Console.WriteLine("Liczba jest parzysta.");
 //         }
@@ -53,9 +53,9 @@
 
 //         Console.WriteLine((nLiczba % 2 == 0 && nLiczba % 3 == 0) ? "Liczba jest parzysta i podzielna przez 3." : "Liczba nie jest parzysta ani podzielna przez 3.");        
 
-
 //     }
 // }
+
 class App
  {
     static void Main()
