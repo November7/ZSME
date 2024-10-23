@@ -3,70 +3,71 @@ class App
 {
     static void Main()
     {     
-        //String
-        string strTekst1 = "Jakiś przykładowy tekst";        
-        Console.WriteLine(strTekst1);
+        // //String
+        // string strTekst1 = "Jakiś przykładowy tekst";        
+        // Console.WriteLine(strTekst1);
         
-        string strTekst2 = new string("Jakiś inny tekst");
-        Console.WriteLine(strTekst2);
+        // string strTekst2 = new string("Jakiś inny tekst");
+        // Console.WriteLine(strTekst2);
 
-        char[] tChr = ['a','b','c','d','e','f'];
-        string strTekst3 = new string(tChr);
-        Console.WriteLine(strTekst3);
+        // char[] tChr = ['a','b','c','d','e','f'];
+        // string strTekst3 = new string(tChr);
+        // Console.WriteLine(strTekst3);
 
-        foreach (var item in strTekst1)
-        {
-            Console.Write($"{item}, ");
-        }
-        Console.WriteLine();
+        // foreach (var item in strTekst1)
+        // {
+        //     Console.Write($"{item}, ");
+        // }
+        // Console.WriteLine();
 
-        strTekst1 += " z uzupełnieniem";
+        // strTekst1 += " z uzupełnieniem";
 
-        Console.WriteLine(strTekst1);
-        Console.WriteLine(strTekst1[0]);
+        // Console.WriteLine(strTekst1);
+        // Console.WriteLine(strTekst1[0]);
 
-        //strTekst[0] = 'j'; // błąd
-        strTekst1 = 'j' + strTekst1.Substring(1);        
-        Console.WriteLine(strTekst1);
+        // //strTekst[0] = 'j'; // błąd
+        // strTekst1 = 'j' + strTekst1.Substring(1);        
+        // Console.WriteLine(strTekst1);
 
-        //Zastępowanie znaków:
-        strTekst1 = strTekst1.Replace('a', 'x');
-        Console.WriteLine(strTekst1);
+        // //Zastępowanie znaków:
+        // strTekst1 = strTekst1.Replace('a', 'x');
+        // Console.WriteLine(strTekst1);
 
-        //Parsowanie tekstu (interpolacja)
-        int nLiczba = 123;
-        DateTime teraz = DateTime.Now;
+        // //Parsowanie tekstu (interpolacja)
+        // int nLiczba = 123;
+        // DateTime teraz = DateTime.Now;
         Random random = new Random();
 
-        Console.WriteLine($"jakiś tekst zawierający formuły: {123 + 321}, {Math.Sqrt(nLiczba):N} {teraz: yyyy MM dddd} {random.Next(123)}");
+        // Console.WriteLine($"jakiś tekst zawierający formuły: {123 + 321}, {Math.Sqrt(nLiczba):N} {teraz: yyyy MM dddd} {random.Next(123)}");
+        // // Console.WriteLine("jakiś tekst zawierający formuły: {0}, {1:N} {2: yyyy MM dddd} {3}",123+321,Math.Sqrt(nLiczba),teraz,random.Next(123));
 
-        //Ignorowanie znaków ucieczki
-        Console.WriteLine("C:\\windows\\system32\\");
-        Console.WriteLine(@"C:\windows\system32\");
-        Console.WriteLine(@"tekst który jest 
-                            zapisany w kilku
-                             liniach");
+        // //Ignorowanie znaków ucieczki
+        // Console.WriteLine("C:\\windows\\system32\\");
+        // Console.WriteLine(@"C:\windows\system32\");
+        // Console.WriteLine(@"tekst który jest 
+        //                     zapisany w kilku
+        //                      liniach");
 
-        // Najważniejsze metody i właściwości String:
+        // // Najważniejsze metody i właściwości String:
 
-        Console.WriteLine($"Długość tekstu: {strTekst1.Length}");
-        Console.WriteLine($"Fragment tekstu: {strTekst1.Substring(5)}, {strTekst1.Substring(3,7)}");
-        Console.WriteLine($"Pierwsze/ostatnie wystąpienie znaku: {strTekst1.IndexOf('a')}, {strTekst1.LastIndexOf('p')}");
-        Console.WriteLine($"Zawieranie tekstu: {strTekst1.Contains("tekst")} {strTekst1.Contains('a')}");
-        Console.WriteLine($"Zastępowanie tekstu: {strTekst1.Replace("tekst","TEKST")}");
-        Console.WriteLine($"Zwiększanie/Zmniejszanie tekstu: {strTekst1.ToLower()} {strTekst1.ToUpper()}");
-        Console.WriteLine($"Usuwanie białych znaków z początku i końca tekstu: {"    tekst ze spacjami    ".Trim()}");
+        // Console.WriteLine($"Długość tekstu: {strTekst1.Length}");
+        // Console.WriteLine($"Fragment tekstu: {strTekst1.Substring(5)}, {strTekst1.Substring(3,7)}");
+        // Console.WriteLine($"Pierwsze/ostatnie wystąpienie znaku: {strTekst1.IndexOf('a')}, {strTekst1.LastIndexOf('p')}");
+        // Console.WriteLine($"Zawieranie tekstu: {strTekst1.Contains("tekst")} {strTekst1.Contains('a')}");
+        // Console.WriteLine($"Zastępowanie tekstu: {strTekst1.Replace("tekst","TEKST")}");
+        // Console.WriteLine($"Zwiększanie/Zmniejszanie tekstu: {strTekst1.ToLower()} {strTekst1.ToUpper()}");
+        // Console.WriteLine($"Usuwanie białych znaków z początku i końca tekstu: {"    tekst ze spacjami    ".Trim()}");
 
-        //Podział tekstu na podteksty:
-        string[] podteksty = strTekst1.Split(" ");
-        foreach (var item in podteksty)
-        {
-            Console.WriteLine($"{item}, ");
-        }     
+        // //Podział tekstu na podteksty:
+        // string[] podteksty = strTekst1.Split(" ");
+        // foreach (var item in podteksty)
+        // {
+        //     Console.WriteLine($"{item}, ");
+        // }     
 
-        Console.WriteLine($"Łączenie tekstów: {string.Join("|",podteksty)}");
-        Console.WriteLine($"Konkatenacja: {string.Concat("jeden tekst"," ---- ","trzeci tekst")}");
-        Console.WriteLine($"Formatowanie tekstu: {string.Format(" {0:C}, {1:x04}, {1:b010}", 123.321, 123)}");
+        // Console.WriteLine($"Łączenie tekstów: {string.Join("|",podteksty)}");
+        // Console.WriteLine($"Konkatenacja: {string.Concat("jeden tekst"," ---- ","trzeci tekst")}");
+        // Console.WriteLine($"Formatowanie tekstu: {string.Format(" {0:C}, {1:x04}, {1:b010}", 123.321, 123)}");
                
         // Tablica
 
@@ -86,6 +87,7 @@ class App
         // arrLiczby[10] = 123; //wyjątek!!!
         
         int[] arrLiczby2 = {1, 3, 4, 3, 5, 6, 7, 3, 3, 5, 7, 4, 3};
+        // int[] arrLiczby2b = new int[13] {1, 3, 4, 3, 5, 6, 7, 3, 3, 5, 7, 4, 3};
 
         foreach (var item in arrLiczby2)
         {
