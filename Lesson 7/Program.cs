@@ -4,26 +4,10 @@
     static void Main()
     {
         //Pętla for
-
+      
         for (int i = 0; i < 10; i++)
         {
             Console.WriteLine($"Iteracja: {i}");
-        }
-
-        //Pętla foreach
-        
-        int[] numbers = { 1, 2, 3, 4, 5 };
-        
-        foreach (int number in numbers)
-        {
-            Console.WriteLine($"Liczba: {number}");
-        }
-
-        string s = "Ala ma kota";
-
-        foreach (char c in s)
-        {
-            Console.WriteLine($"Znak: {c}");
         }
 
         //Pętla while
@@ -46,6 +30,23 @@
             k++;
         } while (k < 10);
 
+
+        //Pętla foreach
+
+        int[] numbers = { 1, 2, 3, 4, 5 };
+        
+        foreach (int number in numbers)
+        {
+            Console.WriteLine($"Liczba: {number}");
+        }
+
+        string s = "Ala ma kota";
+
+        foreach (char c in s)
+        {
+            Console.WriteLine($"Znak: {c}");
+        }
+        
         //Instrukcja break
         
         for (int i = 0; i < 10; i++)
