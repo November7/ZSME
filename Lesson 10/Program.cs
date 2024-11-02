@@ -20,10 +20,10 @@
         denominator = 1;
     }
 
-    public CFraction(int numerator, int denominator)
+    public CFraction(int numerator, int denominator) : this()
     {
         this.numerator = numerator;
-        this.denominator = denominator;
+        if(denominator != 0) this.denominator = denominator;
     }
 
     public override string ToString()
@@ -45,6 +45,12 @@
         return result;
     }
 
+    public static CFraction operator++(CFraction A)
+    {
+        A.Numerator+=A.Denominator;
+        return A;
+    }
+
 
 }
 class App
@@ -58,7 +64,11 @@ class App
         c.Numerator = 5;
         c.Denominator = 0;
         e = c * d;
+        // e++;
         Console.WriteLine($"{c}, {d}, {e}");
+
+
+
     }
 
 }
