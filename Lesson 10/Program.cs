@@ -1,54 +1,8 @@
-﻿class CFraction
-{
-    private int numerator = 0;
-    private int denominator = 1;
-
-    public int Numerator 
-    { 
-        get { return numerator; }
-        set { numerator = value; }
-    }
-    public int Denominator
-    {
-        get { return denominator; }
-        set { denominator = value != 0 ? value : 1; }
-    }
-
-    public CFraction()
-    {
-        numerator = 0;
-        denominator = 1;
-    }
-
-    public CFraction(int numerator, int denominator)
-    {
-        this.numerator = numerator;
-        this.denominator = denominator;
-    }
-
-    public override string ToString()
-    {
-        int sign = 1;
-        if (Denominator < 0)
-            sign = -1;
-        string denom;
-        denom = sign * Denominator != 1 ? "/" + (sign * Denominator).ToString() : "";
-        return $"{sign*Numerator}{denom}";
-    }
-
-    public static CFraction operator* (CFraction A, CFraction B)
-    {
-        CFraction result = new();
-        result.Numerator = A.Numerator * B.Numerator;        
-        result.Denominator = A.Denominator * B.Denominator;
-        
-        return result;
-    }
-
-
-}
+﻿using Fraction;
+using Point;
 class App
 {
+      
     static void Main()
     {
         CFraction c = new ();
@@ -58,7 +12,18 @@ class App
         c.Numerator = 5;
         c.Denominator = 0;
         e = c * d;
+        // e++;
         Console.WriteLine($"{c}, {d}, {e}");
+
+
+        CPoint A = new();
+        A.X = 23;
+        A.Y = 45;
+        CPoint3D B = new();
+        B.X = 12;
+        B.Y = 34;
+        B.Z = 56;
+        Console.WriteLine($"{A} {B}");
     }
 
 }
