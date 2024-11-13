@@ -16,6 +16,7 @@ namespace Point
         }
         public CPoint()
         {
+            Console.WriteLine("CPoint");
             x = 0;
             y = 0;
         }
@@ -28,6 +29,10 @@ namespace Point
         {
             return $"({x}, {y})";
         }
+        ~CPoint()
+        {
+            Console.WriteLine("Niszczenie obiektu");
+        }
 
     }
 
@@ -39,6 +44,11 @@ namespace Point
         public CPoint3D() : base()
         {
             z = 0;
+        }
+
+        ~CPoint3D()
+        {
+            Console.WriteLine("Niszczenie obiektu 3D");
         }
 
         public override string ToString()

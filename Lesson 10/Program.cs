@@ -1,8 +1,8 @@
 ﻿using Fraction;
 using Point;
+
 class App
 {
-      
     static void Main()
     {
         CFraction c = new ();
@@ -15,7 +15,6 @@ class App
         // e++;
         Console.WriteLine($"{c}, {d}, {e}");
 
-
         CPoint A = new();
         A.X = 23;
         A.Y = 45;
@@ -24,6 +23,10 @@ class App
         B.Y = 34;
         B.Z = 56;
         Console.WriteLine($"{A} {B}");
+        B=new CPoint3D();
+        B.X = A.X;
+        Console.WriteLine($"{B}");     
+    
     }
 
 }
