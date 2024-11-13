@@ -3,6 +3,22 @@ using Point;
 
 class App
 {
+    static void test()
+    {
+        // CPoint A = new();
+        //     A.X = 23;
+        //     A.Y = 45;
+            CPoint3D B;
+            B = new CPoint3D();
+            B = null;
+            // B.X = 12;
+            // B.Y = 34;
+            // B.Z = 56;
+            // Console.WriteLine($"{A} {B}");
+            // B=new CPoint3D();
+            // B.X = A.X;
+            // Console.WriteLine($"{B}");
+    }
     static void Main()
     {
         CFraction c = new ();
@@ -15,17 +31,11 @@ class App
         // e++;
         Console.WriteLine($"{c}, {d}, {e}");
 
-        CPoint A = new();
-        A.X = 23;
-        A.Y = 45;
-        CPoint3D B = new();
-        B.X = 12;
-        B.Y = 34;
-        B.Z = 56;
-        Console.WriteLine($"{A} {B}");
-        B=new CPoint3D();
-        B.X = A.X;
-        Console.WriteLine($"{B}");     
+        for(int i=0;i<100;i++)
+        {
+            test();  
+        }
+        GC.Collect();
     
     }
 

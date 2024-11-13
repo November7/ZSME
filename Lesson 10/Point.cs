@@ -43,6 +43,7 @@ namespace Point
         public double Z { get; set; }
         public CPoint3D() : base()
         {
+            Console.WriteLine("CPoint3D");
             z = 0;
         }
 
