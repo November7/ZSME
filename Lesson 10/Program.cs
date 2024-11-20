@@ -1,51 +1,47 @@
 ﻿class CExample
 {
-    private int a;
-    public int A 
+    private int x;
+
+    public int X 
     {
         get
         {
-            return a;
-        } 
-        init
-        {
-            a = value;
-            Console.WriteLine("inicjalizacja A");
+            return x;
         }
-        // set
-        // {
-        //     if (value < 0)
-        //     {
-        //         a = 0;
-        //     }
-        //     else a = value;
-        // }
+        // init
+        set
+        {
+            if(value>100)
+                x = 100;
+            else if(value<0)
+                x = 0;
+            else
+                x = value;
+        }
     }
 
     public CExample()
     {
-        A = 123;
-        Console.WriteLine("Hi");
+        Console.WriteLine("Tworzę obiekt");
+        x = 0;
     }
-    ~CExample()
-    {
-        Console.WriteLine("Bye");
-    }
-    public virtual void PrintA()
-    {
-        Console.WriteLine(A);
-    }
+    
 }
-
-
 
 class App
 {
     static void Main()
     {
-        CExample example = new CExample();
-        // example.A = 10;
-        example.PrintA();
+
+        CExample ob = new();
+        ob.X = 123;
+        Console.WriteLine(ob.X);
+        ob.X = -123;
+        Console.WriteLine(ob.X);
+        ob.X = 33;
+        Console.WriteLine(ob.X);
+
+
 
        
     }
