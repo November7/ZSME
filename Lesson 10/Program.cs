@@ -2,47 +2,33 @@
 {
     private int x;
 
-    public int X 
+    public int X
     {
+        set
+        {
+            if(value > 100)     x = 100;
+            else if (value < 0) x = 0;    
+            else                x = value;
+        }
         get
         {
             return x;
-        }
-        // init
-        set
-        {
-            if(value>100)
-                x = 100;
-            else if(value<0)
-                x = 0;
-            else
-                x = value;
         }
     }
 
     public CExample()
     {
-        Console.WriteLine("Tworzę obiekt");
-        x = 0;
-    }
-    
+        X = 0;
+        Console.WriteLine("Obiekt jest tworzony");
+    }    
 }
 
 class App
 {
     static void Main()
     {
-
         CExample ob = new();
         ob.X = 123;
-        Console.WriteLine(ob.X);
-        ob.X = -123;
-        Console.WriteLine(ob.X);
-        ob.X = 33;
-        Console.WriteLine(ob.X);
-
-
-
-       
+        Console.WriteLine($"{ob.X}");
     }
 }
