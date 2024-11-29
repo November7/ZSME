@@ -3,10 +3,6 @@ using Point;
 using StringExtensions;
 
 
-
-
-
-
 class App
 {
     static void test()
