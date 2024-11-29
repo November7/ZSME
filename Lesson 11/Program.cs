@@ -10,7 +10,7 @@ class App
         // CPoint A = new();
         //     A.X = 23;
         //     A.Y = 45;
-            CPoint3D B;
+            CPoint3D? B;
             B = new CPoint3D();
             B = null;
             // B.X = 12;
