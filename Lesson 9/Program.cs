@@ -2,11 +2,12 @@
 {
     static void Main()
     {
-        // Random random1 = new();
+        // Random random1 = new(); 
         // Console.WriteLine(random1.Next());
         // #pragma warning disable IDE0090
         // Random random1b = new Random();
         // var random1c = new Random();
+
 
         // Console.WriteLine(random2.Next());
 
@@ -15,6 +16,7 @@
         // Lista
 
         Console.WriteLine("Lista");
+
         List<int> Lista1 = new();
         // List<int> Lista1b = new List<int>();
 
@@ -23,7 +25,7 @@
             Lista1.Add(random.Next(10));
         }
         
-        foreach (var item in Lista1)
+        foreach (int item in Lista1)
         {
             Console.Write($"{item}, ");
         }
@@ -55,11 +57,11 @@
 
         List<object> Lista3 = [1,2,3,"randomowy tekst",3.123,2,4,5,5];
 
-        // foreach (var item in Lista3)
-        // {
-        //     Console.Write($"{item}, ");
-        // }
-        // Console.WriteLine();
+        foreach (var item in Lista3)
+        {
+            Console.Write($"{item}, ");
+        }
+        Console.WriteLine();
 
         // //Klasa Tuple
         // Console.WriteLine("Klasa Tuple");
@@ -95,57 +97,57 @@
 
 
         //Zbiór
-        // #pragma warning disable IDE0028
-        HashSet<int> Zbior1a = new HashSet<int> {7, 2, 3, 4, 5};
-        HashSet<int> Zbior1b = new () {7, 2, 3, 4, 5};
-        HashSet<int> Zbior1c =  [7, 2, 3, 4, 5];
+        // // #pragma warning disable IDE0028
+        // HashSet<int> Zbior1a = new HashSet<int> {7, 2, 3, 4, 5};
+        // HashSet<int> Zbior1b = new () {7, 2, 3, 4, 5};
+        // HashSet<int> Zbior1c =  [7, 2, 3, 4, 5];
 
-        Zbior1a.Add(5);
-        Zbior1a.Add(5);
-        Zbior1a.Add(6);
-        Zbior1a.Remove(3);
+        // Zbior1a.Add(5);
+        // Zbior1a.Add(5);
+        // Zbior1a.Add(6);
+        // Zbior1a.Remove(3);
 
-        foreach (var item in Zbior1a)
-        {
-            Console.Write($"{item}, ");
-        }
-        Console.WriteLine();
+        // foreach (var item in Zbior1a)
+        // {
+        //     Console.Write($"{item}, ");
+        // }
+        // Console.WriteLine();
 
-        HashSet<string> Zbior2 = ["ala","ma","kota","a","sierotka","ma","Rysia"];
-        // Console.WriteLine($"{Zbior1a},{Zbior2}");
+        // HashSet<string> Zbior2 = ["ala","ma","kota","a","sierotka","ma","Rysia"];
+        // // Console.WriteLine($"{Zbior1a},{Zbior2}");
 
-        foreach (var item in Zbior2)
-        {
-            Console.Write($"{item}, ");
-        }
-        Console.WriteLine();
+        // foreach (var item in Zbior2)
+        // {
+        //     Console.Write($"{item}, ");
+        // }
+        // Console.WriteLine();
 
-        //Słownik
-        // #pragma warning disable IDE0090
-        Dictionary<string, int> dict1 = new Dictionary<string, int>
-        {
-            { "Alice", 30 },
-            { "Bob", 25 },
-            { "Charlie", 35 }
-        };
+        // //Słownik
+        // // #pragma warning disable IDE0090
+        // Dictionary<string, int> dict1 = new Dictionary<string, int>
+        // {
+        //     { "Alice", 30 },
+        //     { "Bob", 25 },
+        //     { "Charlie", 35 }
+        // };
 
-        // Dictionary<string, int> dict2 = new() { { "Alice", 30 }, { "Bob", 25 }};
+        // // Dictionary<string, int> dict2 = new() { { "Alice", 30 }, { "Bob", 25 }};
 
-        // Dodawanie elementów do słownika
-        dict1.Add("David", 40);
-        // dict2.Add("David", 40);
+        // // Dodawanie elementów do słownika
+        // dict1.Add("David", 40);
+        // // dict2.Add("David", 40);
 
-        // Wyświetlanie zawartości słownika
-        foreach (var item in dict1) //KeyValuePair
-        {
-            Console.WriteLine($"Key: {item.Key}, Value: {item.Value}");
-        }
+        // // Wyświetlanie zawartości słownika
+        // foreach (var item in dict1) //KeyValuePair
+        // {
+        //     Console.WriteLine($"Key: {item.Key}, Value: {item.Value}");
+        // }
 
-        // Uzyskiwanie wartości na podstawie klucza
-        if (dict1.TryGetValue("Alice", out int age))
-        {
-            Console.WriteLine($"Age of Alice: {age}");
-        }
+        // // Uzyskiwanie wartości na podstawie klucza
+        // if (dict1.TryGetValue("Alice", out int age))
+        // {
+        //     Console.WriteLine($"Age of Alice: {age}");
+        // }
     
     }
 

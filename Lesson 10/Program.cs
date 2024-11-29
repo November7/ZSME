@@ -1,29 +1,34 @@
-﻿using Fraction;
-using Point;
-class App
+﻿class CExample
 {
-      
-    static void Main()
+    private int x;
+
+    public int X
     {
-        CFraction c = new ();
-        CFraction d = new (1,-2);
-        CFraction e;
-        
-        c.Numerator = 5;
-        c.Denominator = 0;
-        e = c * d;
-        // e++;
-        Console.WriteLine($"{c}, {d}, {e}");
-
-
-        CPoint A = new();
-        A.X = 23;
-        A.Y = 45;
-        CPoint3D B = new();
-        B.X = 12;
-        B.Y = 34;
-        B.Z = 56;
-        Console.WriteLine($"{A} {B}");
+        set
+        {
+            if(value > 100)     x = 100;
+            else if (value < 0) x = 0;    
+            else                x = value;
+        }
+        get
+        {
+            return x;
+        }
     }
 
+    public CExample()
+    {
+        X = 0;
+        Console.WriteLine("Obiekt jest tworzony");
+    }    
+}
+
+class App
+{
+    static void Main()
+    {
+        CExample ob = new();
+        ob.X = 123;
+        Console.WriteLine($"{ob.X}");
+    }
 }

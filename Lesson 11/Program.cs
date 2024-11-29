@@ -1,53 +1,56 @@
-﻿class KlasaBazowa
+﻿using Fraction;
+using Point;
+using StringExtensions;
+
+
+
+
+
+
+class App
 {
-    public KlasaBazowa()
+    static void test()
     {
-        Console.WriteLine("Konstruktor klasy bazowej");
+        // CPoint A = new();
+        //     A.X = 23;
+        //     A.Y = 45;
+            CPoint3D B;
+            B = new CPoint3D();
+            B = null;
+            // B.X = 12;
+            // B.Y = 34;
+            // B.Z = 56;
+            // Console.WriteLine($"{A} {B}");
+            // B=new CPoint3D();
+            // B.X = A.X;
+            // Console.WriteLine($"{B}");
     }
 
-    public void PrzykladowaMetoda()
+    static void Main()
     {
-        Console.WriteLine("Jakaś metoda z klasy bazowej");
-    }
-}
+        CFraction c = new ();
+        CFraction d = new (1,-2);
+        CFraction e;
+        
+        c.Numerator = 5;
+        c.Denominator = 0;
+        e = c * d;
+        // e++;
+        Console.WriteLine($"{c}, {d}, {e}");
 
-
-static class KlasaRozszerzajacaInneKlasy
-{
-    
-    public static void NowaMetoda(this KlasaBazowa obj) 
-    { 
-        Console.WriteLine("New method"); 
-    } 
-
-    public static string Capitalize(this string obj)
-    {
-        return obj[0].ToString().ToUpper() + obj.Substring(1).ToLower();
-    }
-
-    public static string Title(this string obj, string sep = " ")
-    {
-        string[] parts = obj.Split(sep);
-        for(int i = 0 ; i<parts.Length; i++)
+        for(int i=0;i<100;i++)
         {
-            parts[i] = parts[i].Capitalize();
+            test();  
         }
+        GC.Collect();
 
-        return string.Join(sep,parts);
+
+
+        string PrzykladowyTekst = "ala ma kota";
+        Console.WriteLine(PrzykladowyTekst.Capitalize());
+        Console.WriteLine(PrzykladowyTekst.Title());
+    
     }
+
 }
 
-class Program 
-{ 
-    static void Main() 
-    { 
-        KlasaBazowa obj = new (); 
-        obj.PrzykladowaMetoda(); 
-        obj.NowaMetoda(); 
-
-
-        string test = "ala ma kota";
-        Console.WriteLine(test.Capitalize());
-        Console.WriteLine(test.Title());
-    } 
-}
