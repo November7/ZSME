@@ -1,1 +1,1 @@
-# zsme
+# Materiały na zajęcia
