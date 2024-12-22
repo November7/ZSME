@@ -3,7 +3,7 @@ import os
 import itertools
 import networkx as nx
 
-def BrutForce(m,n,k,bit,bajt):
+def BruteForce(m,n,k,bit,bajt):
     ...
     rekonstrukcje = 0
     
@@ -62,7 +62,7 @@ def Main():
 
                 # Sprawdzanie wszystkich wariacji i zliczanie tych, które są możliwe 
 
-                # print(BrutForce(m,n,k,Bitada,Bajtogrod))
+                # print(BruteForce(m,n,k,Bitada,Bajtogrod))
 
                 # https://networkx.org/documentation/stable/reference/algorithms/isomorphism.vf2.html
                 print(Gotowiec(m,n,k,Bitada,Bajtogrod))
