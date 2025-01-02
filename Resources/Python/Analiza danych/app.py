@@ -4,11 +4,10 @@ import matplotlib.pyplot as plt
 
 #1 pobieranie danych
 
-
 df = pd.read_csv(mf.GetFileFromCurDir("temperature.csv"),sep=";",decimal=".")
 
 
-# #2 Wyświetlanie danych
+#2 Wyświetlanie danych
 
 # #2a
 # print(df.head(10))
@@ -19,11 +18,11 @@ df = pd.read_csv(mf.GetFileFromCurDir("temperature.csv"),sep=";",decimal=".")
 
 #3 Porządkowanie danych
 
-#3a
-df.drop("record_id",axis=1,inplace=True)
-print(df.head())
+# #3a
+# df.drop("record_id",axis=1,inplace=True)
+# print(df.head())
 
-#3b
+# #3b
 # df["id"] = range(len(df))
 # print(df.head())
 
@@ -50,8 +49,6 @@ df = df[lista_kolumn]
 #4 Poprawianie danych:
 
 #4a
-
-
 df["AvgTmpC"] = df["AvgTmpF"].apply(mf.F2C)
 df["AvgTmpUncC"] = df["AvgTmpUncF"].apply(mf.F2C)
 # print(df.head(20))
@@ -61,8 +58,6 @@ df = df[["id","year","month","day","AvgTmpC","AvgTmpUncC","City","Country","Lati
 
 
 #4b
-
-
 df["Latitude"] = df["Latitude"].apply(mf.LatLong)
 df["Longitude"] = df["Longitude"].apply(mf.LatLong)
 # print(df.head(20))
@@ -71,7 +66,7 @@ df["Longitude"] = df["Longitude"].apply(mf.LatLong)
 # df_beznan = df.dropna()
 # print(df_beznan.head())
 
-#4d
+# #4d
 # df_beznan = df.fillna(0)
 # print(df_beznan.head())
 
@@ -82,19 +77,17 @@ df["AvgTmpUncC"] = df["AvgTmpUncC"].fillna(0)
 
 # print(df.head())
 
-#4f
-
-
+# #4f
 df["AvgTmpC"] = df.groupby(["City", "Country", "month"])["AvgTmpC"].transform(mf.AvgLoc)
 # df["AvgTmpC"] = df.groupby(["City", "Country", "month"])["AvgTmpC"].transform(lambda x: x.fillna(x.mean()))
 # print(df.head())
 
 #5 Filtowanie
 
-# 5a 
+# #5a 
 # print(df[["id","Country","AvgTmpC"]])
 
-# 5b
+# #5b
 # print(df[["id","Country","AvgTmpC"]].loc[df["AvgTmpC"]<0])
 
 # 5c
@@ -104,7 +97,6 @@ cond3 = df["Country"] == "Poland"
 print(df[["id","Country","AvgTmpC"]].loc[cond3 & (cond1 | cond2)])
 
 # #6 Statystyki
-
 
 # srednia_temp = df["AvgTmpC"].mean() 
 # max_temp = df["AvgTmpC"].max() 
@@ -116,49 +108,37 @@ print(df[["id","Country","AvgTmpC"]].loc[cond3 & (cond1 | cond2)])
 
 # #7 Grupowanie
 
-# # filtr1 = df.loc[df["year"]>1900]
+# filtr1 = df.loc[df["year"] > 1900]
 filtr1 = df
 
-
-
-# # 7a
+# #7a
 grupa0 = filtr1.groupby("Country").count()
 print(grupa0)
 # print(grupa0.index.tolist())
 
-# # 7b
+# #7b
 # grupa1 = filtr1.groupby(["Country","year"])["AvgTmpC"].mean()
-# # print(grupa1)
+# print(grupa1)
 # print(grupa1.loc[("Poland")])
 
-# # 7c
+# #7c
 # grupa2 = filtr1.groupby(["Country","year","month"])["AvgTmpC"].max()
 # print(grupa2.loc[("Poland")])
 # print(grupa2.loc[("Poland",1901)])
 # print(grupa2.loc[("Poland",1901,1)])
 
-# # 7d
+# #7d
 # grupa3 = filtr1.groupby(["year","month","Country"])["AvgTmpC"].mean()
 # print(grupa3.loc[(1901)])
 
-
-
 #8 Wykresy
-
-
-
 dane_w1 = df[["Country","year","month","AvgTmpC"]].loc[df["Country"]=="Poland"]
 dane_w2 = df[["Country","year","month","AvgTmpC"]].loc[df["Country"]=="Sweden"]
 dane_w3 = df[["Country","year","month","AvgTmpC"]].loc[df["Country"]=="France"]
 grupa1 = dane_w1.groupby(["year"])["AvgTmpC"].mean()
 grupa2 = dane_w2.groupby(["year"])["AvgTmpC"].mean()
 grupa3 = dane_w3.groupby(["year"])["AvgTmpC"].mean()
-
-
-
 xlabels = grupa1.index.tolist()[::20]
-
-
 plt.plot(grupa1.index,grupa1.values,label = "Polska")
 plt.plot(grupa2.index,grupa2.values,label = "Szwecja")
 plt.plot(grupa3.index,grupa3.values,label = "Francja")
