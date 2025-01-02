@@ -6,7 +6,7 @@ def GetFileFromCurDir(name):
 
 
 def LatLong(inp):
-    last = inp[-1]
+    last = inp[-1].upper()
     try:
         val = float(inp[:-1])
     except:
