@@ -1,11 +1,11 @@
 import pandas as pd
-import os
+import funkcje as mf
 import matplotlib.pyplot as plt
 
 #1 pobieranie danych
-path = os.path.dirname(__file__)
 
-df = pd.read_csv(f"{path}\\temperature.csv",sep=";",decimal=".")
+
+df = pd.read_csv(mf.GetFileFromCurDir("temperature.csv"),sep=";",decimal=".")
 
 
 # #2 Wyświetlanie danych
@@ -21,7 +21,7 @@ df = pd.read_csv(f"{path}\\temperature.csv",sep=";",decimal=".")
 
 #3a
 df.drop("record_id",axis=1,inplace=True)
-# print(df.head())
+print(df.head())
 
 #3b
 # df["id"] = range(len(df))
@@ -29,7 +29,7 @@ df.drop("record_id",axis=1,inplace=True)
 
 #3c
 df.insert(0,"id",range(len(df)))
-# print(df.head())
+print(df.head())
 
 #3d
 kolumny = ["id","year","month","day","AverageTemperatureFahr","AverageTemperatureUncertaintyFahr","City","country_id","Country","Latitude","Longitude"]
@@ -42,20 +42,18 @@ df.rename(columns = {"AverageTemperatureUncertaintyFahr":"AvgTmpUncF"},inplace=T
 # print(df.head())
 
 #3f
-df = df[["id","year","month","day","AvgTmpF","AvgTmpUncF","City","Country","Latitude","Longitude"]]
+lista_kolumn = ["id","year","month","day","AvgTmpF","AvgTmpUncF","City","Country","Latitude","Longitude"]
+# df = df[["id","year","month","day","AvgTmpF","AvgTmpUncF","City","Country","Latitude","Longitude"]]
+df = df[lista_kolumn]
 # print(df.head())
 
 #4 Poprawianie danych:
 
 #4a
-def F2C(tmp):
-    return 5 * (tmp - 32) / 9
 
-# def C2F(tmp):
-#     return 9 * tmp / 5 + 32
 
-df["AvgTmpC"] = df["AvgTmpF"].apply(F2C)
-df["AvgTmpUncC"] = df["AvgTmpUncF"].apply(F2C)
+df["AvgTmpC"] = df["AvgTmpF"].apply(mf.F2C)
+df["AvgTmpUncC"] = df["AvgTmpUncF"].apply(mf.F2C)
 # print(df.head(20))
 
 df = df[["id","year","month","day","AvgTmpC","AvgTmpUncC","City","Country","Latitude","Longitude"]]
@@ -63,19 +61,10 @@ df = df[["id","year","month","day","AvgTmpC","AvgTmpUncC","City","Country","Lati
 
 
 #4b
-def LatLong(inp):
-    last = inp[-1]
-    try:
-        val = float(inp[:-1])
-    except:
-        val = 0
-    if last == "S" or last == "W":
-        return -val
-    else:
-        return val
 
-df["Latitude"] = df["Latitude"].apply(LatLong)
-df["Longitude"] = df["Longitude"].apply(LatLong)
+
+df["Latitude"] = df["Latitude"].apply(mf.LatLong)
+df["Longitude"] = df["Longitude"].apply(mf.LatLong)
 # print(df.head(20))
 
 # #4c
@@ -94,10 +83,9 @@ df["AvgTmpUncC"] = df["AvgTmpUncC"].fillna(0)
 # print(df.head())
 
 #4f
-def AvgLoc(dane):
-    return dane.fillna(dane.mean())
 
-df["AvgTmpC"] = df.groupby(["City", "Country", "month"])["AvgTmpC"].transform(AvgLoc)
+
+df["AvgTmpC"] = df.groupby(["City", "Country", "month"])["AvgTmpC"].transform(mf.AvgLoc)
 # df["AvgTmpC"] = df.groupby(["City", "Country", "month"])["AvgTmpC"].transform(lambda x: x.fillna(x.mean()))
 # print(df.head())
 
@@ -136,7 +124,7 @@ filtr1 = df
 # # 7a
 grupa0 = filtr1.groupby("Country").count()
 print(grupa0)
-print(grupa0.index.tolist())
+# print(grupa0.index.tolist())
 
 # # 7b
 # grupa1 = filtr1.groupby(["Country","year"])["AvgTmpC"].mean()
@@ -144,7 +132,7 @@ print(grupa0.index.tolist())
 # print(grupa1.loc[("Poland")])
 
 # # 7c
-# grupa2 = filtr1.groupby(["Country","year","month"])["AvgTmpC"].mean()
+# grupa2 = filtr1.groupby(["Country","year","month"])["AvgTmpC"].max()
 # print(grupa2.loc[("Poland")])
 # print(grupa2.loc[("Poland",1901)])
 # print(grupa2.loc[("Poland",1901,1)])
@@ -166,7 +154,7 @@ grupa1 = dane_w1.groupby(["year"])["AvgTmpC"].mean()
 grupa2 = dane_w2.groupby(["year"])["AvgTmpC"].mean()
 grupa3 = dane_w3.groupby(["year"])["AvgTmpC"].mean()
 
-#8a
+
 
 xlabels = grupa1.index.tolist()[::20]
 
