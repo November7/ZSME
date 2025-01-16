@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 
 #1 pobieranie danych
 
-df = pd.read_csv(mf.GetFileFromCurDir("temperature.csv"),sep=";",decimal=".")
+df = pd.read_csv(mf.GetFileFromCurDir("temperature_full.csv"),sep=";",decimal=".")
 
 
 #2 Wyświetlanie danych
