@@ -1,16 +1,15 @@
 ﻿namespace SettersAndGetters
 {
-
     class Osoba
     {
         private int zachowanie;
         private int matematyka;
+        private string pesel;
 
         public int Matematyka
         {
             get { return matematyka; }
-            set { 
-                
+            set {                 
                 if (value < 1) matematyka = 1;
                 else if (value > 6) matematyka = 6;
                 else  matematyka = value; 
@@ -19,30 +18,38 @@
 
         public string Zachowanie
         {
-            get { return zachowanie.ToString(); }
-            set 
+            get 
             { 
-                if (value == "nagana") zachowanie = 1;
-                else if (value == "dostateczne") zachowanie = 2;
-                else if (value == "dobre") zachowanie = 3;
-                else if (value == "bardzo dobre") zachowanie = 4;
-                else if (value == "wzorowe") zachowanie = 5;
-                else if (value == "celujące") zachowanie = 6;
+                  if(zachowanie == 1) return "Naganne";
+                  else if(zachowanie == 2) return "Nieodpowiednie";
+                  else if(zachowanie == 3) return "Poprawne";
+                  else if(zachowanie == 4) return "Dobre";
+                  else if(zachowanie == 5) return "Bardzo dobre";
+                  else if(zachowanie == 6) return "Wzorowe";
+                  else return "Brak oceny";
+            }
+            set
+            {
+                if (value == "naganne") zachowanie = 1;
+                else if (value == "nieodpowiednie") zachowanie = 2;
+                else if (value == "poprawne") zachowanie = 3;
+                else if (value == "dobre") zachowanie = 4;
+                else if (value == "bardzo dobre") zachowanie = 5;
+                else if (value == "wzorowe") zachowanie = 6;
                 else zachowanie = 0;
             }
         }
 
-        private string persel;
 
         public string PESEL
         {
-            get { return persel; }
-            init { persel = value; }
+            get { return pesel; }
+            init { pesel = value; }
         }
 
         public Osoba(string p)
         {
-            persel = p;
+            PESEL = p;
         }
     }
 
