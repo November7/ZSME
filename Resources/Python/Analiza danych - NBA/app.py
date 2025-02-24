@@ -1,5 +1,5 @@
 import pandas as pd
-from matplotlib import pyplot as plt
+# from matplotlib import pyplot as plt
 
 #załaduj pliki
 
