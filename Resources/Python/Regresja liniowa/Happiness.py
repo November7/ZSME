@@ -8,13 +8,20 @@ from sklearn.linear_model import LinearRegression
 from sklearn.preprocessing import PolynomialFeatures
 from sklearn.model_selection import train_test_split
 
+
+#zmiana katalogu na ten w którym znajduje się skrypt
+import os
+os.chdir(os.path.dirname(os.path.abspath(__file__)))
+
 ### Wczytanie danych
 
 df = pd.read_csv("income.data.csv",delimiter=",", decimal=",")
 
 print(df.head())
 print(df.shape)
+print(df.describe())
 
+os.system('pause')
 
 X = np.single(df['income'])
 X.shape = (-1,1)
@@ -28,10 +35,11 @@ plt.title("Dane z importu")
 plt.xlabel('income')
 plt.ylabel("happiness")
 plt.axis([X.min()-2,X.max()+2,Y.min()-2,Y.max()+2])
+plt.legend(["Wszystkie dane","Dane treningowe"])
 plt.grid(True,which="both",axis="both",alpha=.5)
 plt.plot(X,Y,'.')
 plt.plot(X_train,y_train,'r+')
-plt.show()
+plt.show()  
 
 pf = PolynomialFeatures(5)
 x_train_trans = pf.fit_transform(X_train)

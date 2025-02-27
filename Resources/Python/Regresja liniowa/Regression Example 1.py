@@ -7,6 +7,10 @@ from matplotlib import pyplot as plt
 from sklearn.linear_model import LinearRegression
 
 
+#zmiana katalogu na ten w którym znajduje się skrypt
+import os
+os.chdir(os.path.dirname(os.path.abspath(__file__)))
+
 ### Wczytanie danych
 
 df = pd.read_csv('example1.csv',sep=';',decimal=',')
