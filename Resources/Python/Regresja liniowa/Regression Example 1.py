@@ -4,7 +4,7 @@ import pandas as pd
 import numpy as np
 
 from matplotlib import pyplot as plt
-from sklearn.linear_model import LinearRegression
+from sklearn.linear_model import LinearRegression #pip install scikit-learn
 
 
 #zmiana katalogu na ten w którym znajduje się skrypt
