@@ -34,7 +34,7 @@ plt.grid(True,which="both",axis="both",alpha=.5)
 plt.plot(X,Y,'.')
 plt.show()
 
-pf = PolynomialFeatures(12)
+pf = PolynomialFeatures(2)
 x_trans = pf.fit_transform(X)
 
 model = LinearRegression().fit(x_trans,Y)
@@ -60,7 +60,7 @@ from sklearn.model_selection import train_test_split
 
 X_train, X_test, y_train, y_test = train_test_split(X, Y, test_size=0.5) #, random_state=12
 
-pf = PolynomialFeatures(5)
+pf = PolynomialFeatures(2)
 x_train_trans = pf.fit_transform(X_train)
 x_test_trans = pf.fit_transform(X_test)
 x_trans = pf.transform(X)
