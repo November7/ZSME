@@ -21,23 +21,25 @@ os.chdir(os.path.dirname(os.path.abspath(__file__)))
 df = pd.read_csv("Student_Performance.csv",delimiter=",", decimal=".")
 
 print(df.columns)
-# print(df.head())
-# print(df.shape)
-# print(df.describe())
-# print(df.info())
-# print(df.isnull().sum())
+print(df.head())
+print(df.shape)
+print(df.describe())
+print(df.info())
+print(df.isnull().sum())
+
+os.system("pause")
 
 df['Extracurricular Activities'] = df['Extracurricular Activities'].replace({'Yes': 1, 'No': 0})
 
 target = "Performance Index"
 
-# for col in ['Hours Studied', 'Previous Scores', 'Extracurricular Activities', 'Sleep Hours', 'Sample Question Papers Practiced']:    
-#     plt.figure() 
-#     plt.scatter(df[col], df[target])
-#     plt.xlabel(col)
-#     plt.ylabel(target)
-#     plt.title(f'{col} vs {target}')
-#     plt.show()
+for col in ['Hours Studied', 'Previous Scores', 'Extracurricular Activities', 'Sleep Hours', 'Sample Question Papers Practiced']:    
+    plt.figure() 
+    plt.scatter(df[col], df[target])
+    plt.xlabel(col)
+    plt.ylabel(target)
+    plt.title(f'{col} vs {target}')
+    plt.show()
 
 def Ranges(perf):
     if perf < 25:
@@ -55,7 +57,7 @@ df_ranges['Ranges'] = df_ranges['Performance Index'].apply(Ranges)
 print(df_ranges.head())
 
 
-
+#
 # sns.pairplot(df_ranges,hue='Ranges',palette='coolwarm')
 sns.pairplot(df,hue='Performance Index',palette='coolwarm')
 plt.show()
