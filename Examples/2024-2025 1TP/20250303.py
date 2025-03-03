@@ -1,7 +1,6 @@
 from mojabiblioteka import *
 
 
-
 if __name__ == "__main__":
     print(f"{isTriangle(1,2,3) = }")
     print(f"{isTriangle(2,2,3) = }")
@@ -17,3 +16,4 @@ if __name__ == "__main__":
 
     print(f"{isPythagoras(4,3,5) = }")
     print(f"{isPythagoras(4,5,6) = }")
+

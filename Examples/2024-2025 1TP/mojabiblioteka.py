@@ -1,14 +1,20 @@
+# Czy z podanyc boków (a,b,c) można stworzyć trójkąt 
+
 def isTriangle(a:int, b:int, c:int) -> bool:
     if a + b > c and a + c > b and b + c > a: 
         return True
     else:
         return False
+    # return (a + b > c and a + c > b and b + c > a)
+
+
 
 def isPalindrome(text:str) -> bool:
     # if text == text[::-1]: 
     #     return True
     # else:
     #     return False
+    
     i = 0
     rozmiar = len(text)
 
