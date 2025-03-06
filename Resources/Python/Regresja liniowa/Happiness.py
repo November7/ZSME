@@ -15,7 +15,7 @@ os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
 ### Wczytanie danych
 
-df = pd.read_csv("income.data.csv",delimiter=",", decimal=",")
+df = pd.read_csv("Happiness.csv",delimiter=",", decimal=",")
 
 print(df.head())
 print(df.shape)
