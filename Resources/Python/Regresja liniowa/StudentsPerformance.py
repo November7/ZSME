@@ -18,7 +18,7 @@ os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
 ### Wczytanie danych
 
-df = pd.read_csv("Student_Performance.csv",delimiter=",", decimal=".")
+df = pd.read_csv("StudentsPerformance.csv",delimiter=",", decimal=".")
 
 print(df.columns)
 print(df.head())
