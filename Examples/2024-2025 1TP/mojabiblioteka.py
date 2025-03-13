@@ -10,6 +10,8 @@ def isTriangle(a:int, b:int, c:int) -> bool:
 
 
 def isPalindrome(text:str) -> bool:
+    # return text == text[::-1]
+
     # if text == text[::-1]: 
     #     return True
     # else:
@@ -24,11 +26,12 @@ def isPalindrome(text:str) -> bool:
         i += 1
     return True
 
-    
+# import math
+
 def isPrime(number:int) -> bool:
     if number < 2: 
         return False
-    
+    # sqrtNumber = int(math.sqrt(number))
     sqrtNumber = int(number ** 0.5)
     for dzielniki in range(2, sqrtNumber + 1):
         if number % dzielniki == 0:
@@ -36,7 +39,7 @@ def isPrime(number:int) -> bool:
     return True
 
 
-def factorize(number:int) -> []:
+def factorize(number:int) -> []:  #126: 2, 3, 3, 7
     sqrtNumber = int(number ** 0.5)   
     ret = []
     dzielnik = 2
@@ -51,7 +54,7 @@ def factorize(number:int) -> []:
         ret.append(number)
     return ret
     
-def isPythagoras(a,b,c) -> bool:
+def isPythagoras(a,b,c) -> bool: # 3,4,5;  9,16,25
     if a * a + b * b == c * c or c * c + b * b == a * a or a * a + c * c == b * b:
         return True
     else:

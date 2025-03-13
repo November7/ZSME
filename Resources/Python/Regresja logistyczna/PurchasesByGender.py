@@ -21,9 +21,9 @@ print(dane.head())
 X = np.array(dane[["Gender","Age","EstimatedSalary"]])
 y = np.array(dane["Purchased"])
 
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.1)
 
-model = LogisticRegression(max_iter=1000)
+model = LogisticRegression(max_iter=2000)
 model.fit(X_train, y_train)
 y_pred = model.predict(X_test)
 
@@ -35,15 +35,12 @@ print(classification_report(y_test, y_pred))
 
 print(confusion_matrix(y_test, y_pred)) # TN, FP, FN, TP
 
-
-
-# sn.heatmap(confusion_matrix(y_test, y_pred),annot=True)
+sn.heatmap(confusion_matrix(y_test, y_pred),annot=True)
            
 plt.show()
 
-#przykładowe dane
-gender, age, salary = map(int, input("Podaj płeć [0/1], wiek, zarobki: ").split())
+# #przykładowe dane
+# gender, age, salary = map(int, input("Podaj płeć [0/1], wiek, zarobki: ").split())
 
-X_input = np.array([gender, age, salary]).reshape(1, -1)
-print(model.predict(X_input))
-
+# X_input = np.array([gender, age, salary]).reshape(1, -1)
+# print(model.predict(X_input))
