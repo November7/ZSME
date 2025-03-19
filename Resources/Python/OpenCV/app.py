@@ -1,6 +1,7 @@
 import cv2 as cv # pip install opencv-python
 from matplotlib import pyplot as pl
 import numpy as np
+<<<<<<< HEAD
 import os
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
@@ -60,3 +61,6 @@ for file in files:
         i=i+1
 
     pl.show()
+=======
+print(cv.__version__)
+>>>>>>> 9012e609eb9f290190bc6786cf9b97b64db5b570
