@@ -22,10 +22,10 @@ def SelectionSort(data,length):
             licznik += 1
             if data[j] < data[min]:
                 min = j
-        tmp = data[j]
-        data[j] = data[min]
+        tmp = data[i]
+        data[i] = data[min]
         data[min] = tmp
-        # data[j], data[min] = data[min], data[j]
+        # data[i], data[min] = data[min], data[i]
 
     return licznik
     
@@ -53,9 +53,14 @@ for _ in range(n):
 
 print(dane)
 
-# SelAlgorithm = BubbleSort
-# SelAlgorithm = SelectionSort
-SelAlgorithm = InsertionSort
+wyb = int(input("Wybierz algorytm sortowania: 0 - BubbleSort, 1 - SelectionSort, 2 - InsertionSort: "))
+
+if wyb == 0:
+    SelAlgorithm = BubbleSort
+elif wyb == 1:
+    SelAlgorithm = SelectionSort
+else:
+    SelAlgorithm = InsertionSort
 
 print(f"Sortowanie zakończone po {SelAlgorithm(dane,n)} iteracjach")
 
