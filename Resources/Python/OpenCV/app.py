@@ -1,3 +1,5 @@
+# Przykład użycia filtrów krawędziowych do rozpoznawania obiektów ...
+
 # import wymaganych bibliotek
 
 import cv2 as cv # pip install opencv-python
