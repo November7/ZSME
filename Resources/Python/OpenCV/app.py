@@ -65,13 +65,27 @@ def Filtering(imgList,filterList):
     vals = []
     for train in imgList:
         ref = Normalize(train)
+        refVal = ref.sum() / 255
         filtered.append(ref)
-        vals.append("1") #do zmiany
+        vals.append(refVal)
         for filter in filterList:
-            filtered.append(cv.filter2D(src = ref, ddepth = -1, kernel=filter))
-            vals.append("") #do zmiany
+            fimg = cv.filter2D(src = ref, ddepth = -1, kernel=filter)
+            filtered.append(fimg)
+            vals.append(f"{(fimg.sum() / 255 / refVal):.5}") 
 
     return filtered,vals
+
+
+# Średnia wariancja dla danych z wszystkich pomiarów klasy
+# wyrzucanie co 5 elementu - oryginalny obraz a nie przefiltrowany
+
+def MeanVar(vals, nFilters = 4):
+    vals = [float(v) for i, v in enumerate(vals) if i % (nFilters + 1) != 0]
+    matrix = np.reshape(vals, (-1, 4))
+    vars = [row.var() for row in matrix]
+    return np.mean(vars)
+
+
 
 
 # zmiana domyślnej lokalizacji na bieżący katalog
@@ -113,3 +127,9 @@ filtered_o, vals_o = Filtering(train_o, filters)
 
 PlotImageList(filtered_k, 5, vals_k)
 PlotImageList(filtered_o, 5, vals_o)
+
+
+print(f"Średnia wariancja dla krzyżyków wynosi: {MeanVar(vals_k):.3}")
+print(f"Średnia wariancja dla okręgów wynosi: {MeanVar(vals_o):.3}")
+
+
