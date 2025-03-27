@@ -1,63 +1,113 @@
+# import wymaganych bibliotek
+
 import cv2 as cv # pip install opencv-python
 from matplotlib import pyplot as pl
 import numpy as np
+import math
 
 import os
+
+# Normalizacja obrazu (resize 512x512)
+# Wejście: obraz w postaci tablicy numpy
+# Wyjście: znormalizowany obraz jako tablica umpy
+
+def Normalize(img, destSize = 512, threshold = 127):
+    ret = cv.resize(img, (destSize, destSize))
+    ret = cv.cvtColor(ret, cv.COLOR_BGR2GRAY)
+    _, ret = cv.threshold(ret, threshold, 255, cv.THRESH_BINARY)    
+    ret = cv.bitwise_not(ret)
+    return ret
+
+#  Wyświetlanie list obrazów 
+
+def PlotImageList(imgList, limit=2, titles = [], figsize=(8, 8)):
+    if not isinstance(imgList, list):
+        raise ValueError("Input is not a list.")
+    if not imgList:
+        raise ValueError("List is empty.")
+    
+    nCount = len(imgList)
+    h = min(nCount, limit) 
+    v = math.ceil(nCount / limit)
+    
+    _, axes = pl.subplots(v, h, figsize=figsize)
+    axes = axes.flatten() if nCount > 1 else [axes]  
+
+    for i, ax in enumerate(axes):
+        if i < nCount:
+            ax.imshow(cv.cvtColor(imgList[i], cv.COLOR_BGR2RGB))
+            if i < len(titles): ax.set_title(titles[i])
+            ax.axis('on')
+        else:
+            ax.axis('off')  
+
+    pl.tight_layout()
+    pl.show()
+
+
+
+# Ładowanie obrazów z określonej lokalizacji
+
+def ListImages(path, extensions =  ['.jpg', '.jpeg', '.png', '.bmp']):
+    ret = []
+    for file_name in os.listdir(path):
+        if os.path.splitext(file_name)[1].lower() in extensions:
+            ret.append(file_name)            
+    return ret
+
+
+# Zastosowanie filtrów
+
+def Filtering(imgList,filterList):
+    filtered = []
+    vals = []
+    for train in imgList:
+        ref = Normalize(train)
+        filtered.append(ref)
+        vals.append("1") #do zmiany
+        for filter in filterList:
+            filtered.append(cv.filter2D(src = ref, ddepth = -1, kernel=filter))
+            vals.append("") #do zmiany
+
+    return filtered,vals
+
+
+# zmiana domyślnej lokalizacji na bieżący katalog
+
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
-
-
 path = "imgs"
-files = []
+
+imageFiles = ListImages(path)
 
 
-ext = ['.jpg', '.jpeg', '.png', '.bmp']
+train_k = [cv.imread(f"{path}/{file}") for file in imageFiles if file.startswith('k')]
+train_o = [cv.imread(f"{path}/{file}") for file in imageFiles if file.startswith('o')]
 
 
-for file_name in os.listdir(path):
-    if os.path.splitext(file_name)[1].lower() in ext:
-        files.append(file_name)
+# PlotImageList(train_k)
+# PlotImageList(train_o)
 
-k0 = np.array([[0, 0, 0],
-               [0, 1, 0],
-               [0, 0, 0]])
+# Przygotowanie filtrów krawędziowych
 
-# k1 = np.array([[1, 1, 0],
-#                [1,0, -1],
-#                [0, -1, -1]])
-
-k1 = np.array([[1, 1, 1, 0, 0],
-               [1,0,0,0, -1],
-               [1,0,0,0, -1],
-               [1,0,0,0, -1],
-               [0, -1, -1, -1, -1]])
-
-k2 = np.array([[-1, -1, -1],
-               [0, 0, 0],
-               [1, 1, 1]])
-
-k3 = k2.transpose()
-#print (k)
-
-kernels = [k0,k1,k2,k3]
+filters = [np.array([[1,  0, -1],
+                     [1,  0, -1],
+                     [1,  0, -1]]),
+           np.array([[1,  1,  0],
+                     [1,  0, -1],
+                     [0, -1, -1]]),
+           np.array([[1,  1,  1],
+                     [0,  0,  0],
+                     [-1, -1, -1]]),
+           np.array([[0, -1, -1],
+                     [1,  0, -1],
+                     [1,  1,  0]])]
 
 
 
-print("Znalezione obrazy:")
-for file in files:
-    img = cv.imread(f"{path}/{file}")
-    img = 255 - img
-  
-    f,s = pl.subplots(2,2,figsize=[10,10])
-    s.shape = (1,4)
-    i = 0
-    s = s[0]
+filtered_k, vals_k = Filtering(train_k, filters)
+filtered_o, vals_o = Filtering(train_o, filters)
 
-    for ax in s:
-        nimg = cv.filter2D(src = img, ddepth = -1, kernel=kernels[i])
-        ax.imshow(cv.cvtColor(nimg, cv.COLOR_BGR2RGB))
-        ax.axis("off")
-  
-        i=i+1
 
-    pl.show()
+PlotImageList(filtered_k, 5, vals_k)
+PlotImageList(filtered_o, 5, vals_o)
