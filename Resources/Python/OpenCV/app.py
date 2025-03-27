@@ -60,7 +60,7 @@ def ListImages(path, extensions =  ['.jpg', '.jpeg', '.png', '.bmp']):
 
 # Zastosowanie filtrów
 
-def Filtering(imgList,filterList):
+def Filtering(imgList, filterList):
     filtered = []
     vals = []
     for train in imgList:
@@ -73,7 +73,7 @@ def Filtering(imgList,filterList):
             filtered.append(fimg)
             vals.append(f"{(fimg.sum() / 255 / refVal):.5}") 
 
-    return filtered,vals
+    return filtered, vals
 
 
 # Średnia wariancja dla danych z wszystkich pomiarów klasy
@@ -92,7 +92,7 @@ def MeanVar(vals, nFilters = 4):
 
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
-path = "imgs"
+path = "trainXO"
 
 imageFiles = ListImages(path)
 
