@@ -92,7 +92,7 @@ def MeanVar(vals, nFilters = 4):
 
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
-path = "trainXO"
+path = "train_xo"
 
 imageFiles = ListImages(path)
 
