@@ -3,7 +3,7 @@ import random
 class Perceptron:
     def __init__(self, inputSize, learningRate=0.1, epochs=1000):
         self.weights = [random.random()] * inputSize
-        print(self.weights)
+        # print(self.weights)
         self.bias = 0.0
         self.learningRate = learningRate
         self.epochs = epochs
@@ -16,6 +16,7 @@ class Perceptron:
         wSum = 0
         for w, x in zip(self.weights, inputs):            
             wSum += w*x
+
         wSum += self.bias
 
         return self.activation(wSum)
@@ -36,22 +37,28 @@ class Perceptron:
 
 
 trainingData = [
-    # ([0, 0], 0),
-    # ([0, 1], 0),
-    # ([1, 0], 0),
-    # ([1, 1], 1),
-    ([1], 0),
-    ([0], 1),  
+    ([0, 0, 0], 0),
+    ([0, 0, 1], 0),
+    ([0, 1, 0], 0),
+    ([0, 1, 1], 0),    
+    ([1, 0, 0], 0),
+    ([1, 0, 1], 0),
+    ([1, 1, 0], 0),
+    ([1, 1, 1], 1),
+    
+    # ([1], 0),
+    # ([0], 1),  
 ]
 
-perceptron = Perceptron(inputSize=1)
+perceptron = Perceptron(inputSize=3,epochs=1000)
 
 perceptron.train(trainingData)
 
-# print(perceptron.predict([0, 0])) 
-# print(perceptron.predict([1, 0])) 
-# print(perceptron.predict([0, 1]))  
-# print(perceptron.predict([1, 1])) 
-print(perceptron.predict([1])) 
-print(perceptron.predict([0])) 
+print(perceptron.predict([0, 0, 0])) 
+print(perceptron.predict([0, 1, 0]))  
+print(perceptron.predict([1, 0, 0])) 
+print(perceptron.predict([1, 1, 1])) 
+
+# print(perceptron.predict([1])) 
+# print(perceptron.predict([0])) 
 

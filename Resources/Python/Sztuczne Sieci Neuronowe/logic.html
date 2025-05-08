@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logic functions</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+
+        body {
+            display: flex;         
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+        }
+        p,div {
+            padding: 5px 0px 0px 0px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container"> 
+        <h1>Funkcje logiczne (OR, AND, XOR)</h1>
+        <p>Wprowadź wartości dla We 1 i We 2, aby uzyskać wynik działania funkcji logicznej.</p>
+        <div>
+            <label for="input1">We 1:</label>
+            <input type="number" id="input1" oninput="predict()">
+        </div>
+        <div>
+            <label for="input2">We 2:</label>
+            <input type="number" id="input2" oninput="predict()">
+        </div>
+        <div>
+            <label for="functionSelect">Wybierz funkcję:</label>
+            <select id="functionSelect" onchange="loadSelectedModel()">
+                <option value="xor">XOR</option>
+                <option value="or">OR</option>
+                <option value="and">AND</option>
+            </select>
+        </div>
+        <div>
+            <p id="prediction"></p>
+        </div>
+    </div>
+    <script>
+        let model;
+
+        async function loadSelectedModel() {
+            const functionName = document.getElementById('functionSelect').value;
+            model = await tf.loadLayersModel(`models/${functionName}/model.json`);
+            predict();
+        }
+
+        loadSelectedModel();
+
+        async function predict() {
+            const input1 = parseFloat(document.getElementById('input1').value);
+            const input2 = parseFloat(document.getElementById('input2').value);
+
+            if (isNaN(input1) || isNaN(input2)) {
+                document.getElementById('prediction').innerText = "Wynik działania funkcji: Brak danych";
+                return;
+            }
+
+            if (!model) {
+                document.getElementById('prediction').innerText = "Model is not loaded.";
+                return;
+            }
+
+            const inputTensor = tf.tensor2d([[input1, input2]]);
+            
+            const prediction = model.predict(inputTensor);
+            
+
+            document.getElementById('prediction').innerText = "Wynik działania funkcji: " + prediction.dataSync()[0];
+        }
+    </script>
+</body>
+</html>
