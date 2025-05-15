@@ -61,8 +61,14 @@ def main():
         ipAddress = input('Wprowadź adres IPv4 (lub q żeby zakończyć): ')
         if ipAddress.lower() == 'q':
             break
-        
+
+        subnetMask = input('Wprowadź maskę podsieci (w formacie IPv4): ')
+        parsedSubnetMask = parseIP(subnetMask)
         parsedipAddress = parseIP(ipAddress)
+        if isValidSubnetMask(parsedSubnetMask) == False:
+            print('Maska podsieci jest nieprawidłowa')
+            continue
+        
         
         if isValidIP(parsedipAddress) == False:
             print('Adres IP jest nieprawidłowy')
@@ -71,6 +77,8 @@ def main():
             print(f'Adres IPv4: {ipAddress}')
             print(f'Klasa adresu: {classIP(parsedipAddress)}')
             print(f'Dodatkowe informacje: {extInfoIP(parsedipAddress)}')
+            print()
+            calcSubnets(parsedipAddress, parsedSubnetMask)
             print()
 
 
