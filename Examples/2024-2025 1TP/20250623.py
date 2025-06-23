@@ -44,6 +44,25 @@ class Ulamek:
         ...
 
 
+class SuperInt(int):
+    def __init__(self,val):
+        self = val
+    def isPrime(self):
+        return True
+    
+class SuperStr(str):
+    def __init__(self,val):
+        self = val
+    def isPalindrome(self:str):
+        return self.lower() == self[::-1].lower()
+    
+
+a = SuperInt(3)
+
+print(2*a+5, a.isPrime(), type(a))
+
+a = SuperStr("pot0p")
+print(a.isPalindrome())
 
 a = Ulamek(3,4,"A")
 b = Ulamek(2,5,"B")
@@ -53,4 +72,4 @@ print(a, float(a),sep=", ")
 print(b, float(b),sep=", ")
 
 print(a * b)
-# d = a + b
+print(a + b)
