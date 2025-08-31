@@ -16,6 +16,7 @@ full = pd.merge(cc,weather,how="inner",on="Miasto")
 
 print(full)
 
+
 plt.scatter(full["Długość"],full["Szerokość"])
 
 for i in range(len(full)):
