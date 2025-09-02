@@ -27,6 +27,7 @@ print(df.shape)
 X = np.single(df['X'])
 Y = np.single(df['Y'])
 
+
 X.shape = (-1,1) # odwracanie wektora X (zmiana wymiarów z poziomego na pionowy)
 
 print(X,Y)

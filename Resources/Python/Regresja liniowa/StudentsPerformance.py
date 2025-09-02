@@ -20,6 +20,7 @@ os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
 df = pd.read_csv("StudentsPerformance.csv",delimiter=",", decimal=".")
 
+
 print(df.columns)
 print(df.head())
 print(df.shape)
