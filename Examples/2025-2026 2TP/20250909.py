@@ -7,7 +7,6 @@ def GetValue(comment="",error="Nieprawidłowa wartość..."):
         except:
             print(error)
 
-
 x = GetValue("Podaj pierwszą liczbę: ")
 y = GetValue("Podaj drugą liczbę: ")
 
