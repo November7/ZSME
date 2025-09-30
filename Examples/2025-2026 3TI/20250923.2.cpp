@@ -19,6 +19,5 @@ int main()
     {
         cout << "Iloraz: " << float(x) / float(y) << endl;
     }
-
     return 0;
 }
