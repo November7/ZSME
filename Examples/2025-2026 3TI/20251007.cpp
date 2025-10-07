@@ -7,32 +7,31 @@ using namespace std;
 int main()
 {
     // for
-    cout<<"Petla for"<<endl;
-    for(int i=0 ; i<10 ; ++i)
+    cout<<"for"<<endl;
+    for(int i = 0 ; i<10 ; ++i)
     {
-        cout<<i<<endl;  
+        cout<<i<<endl;
     }
     
     // while
-    
+    cout<<"while"<<endl;    
     int i = 0;
-    cout<<"Petla while"<<endl;
     while(i<10)
     {
-        cout<< i <<endl;        
+        cout<<i<<endl;
         ++i;
+        //
     }
     
-    i = 0;
-    cout<<"Petla do..while"<<endl;
+    //do..while
+    cout<<"do..while"<<endl;    
+    i = 0; 
     do
     {
-        cout<<i++<<endl;        
-        // i++;
-    } 
+        cout<<i<<endl;
+        ++i;
+    }
     while(i<10);
-
- 
 
     return 0;
 }
