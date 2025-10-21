@@ -5,27 +5,26 @@ using namespace std;
 int main()
 {
     int i, j;
-    int R = 11;
+    int R = 15;
 
-    for(i=0 ; i < R; i++)
+    for(i=0 ; i < R; i++) //y 
     {
-        for(j=0 ; j < R; j++)
+        for(j=0 ; j < R; j++) //x
         {
-            // if(i == 0 || j == R/2) cout << "*" ; //T
-            // else cout << " ";
-
-            // if(i == R - 1 || j == 0) cout << "*" ; //L
-            // else cout << " ";
-
-            // if(i == R - 1 || j == 0 || j == R-1) cout << "*" ; //U
+            //L
+            // if(j == 0  ||  i == R-1) cout << "*" ;
             // else cout << " ";
             
-            // if(i == R - 1 || j == 0 || i == R/2 || i == 0) cout << "*" ; //E
+            //C
+            // if(j == 0  || i == R-1 || i == 0) cout << "*" ;
             // else cout << " ";
-            //N
-            //Z
-            //X
-            if(i == j || j == -i + R-1) cout << "*" ; 
+
+            //E
+            // if(j == 0  || i == R-1 || i == 0 || i == R/2) cout << "*" ;
+            // else cout << " ";
+
+            //N Z X
+             if(i == -j + R-1 || i == j) cout << "*" ;
             else cout << " ";
 
         }

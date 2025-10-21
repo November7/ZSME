@@ -20,7 +20,7 @@ int main()
    
     //2 napisz program który wypisuje na ekran n liczb o 0 do n-1 za pomocą pętli while
     i = 0;
-    while( i < n)
+    while( i < n )
     {
         cout << i << ", ";
         i++;
