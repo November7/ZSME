@@ -5,8 +5,8 @@ using namespace std;
 int main() 
 {
     // definicja tablicy 1
+    int tab1[10] = {0}; //10 x 4B
 
-    int tab1[10]; //10 x 4B
     for(int i = 0; i<10 ; i++)
     {
         cout << tab1[i] << ", ";
@@ -14,7 +14,7 @@ int main()
     cout<<endl;
 
     //definicja tablicy 2 z lista inicjalizacyjną
-    int tab2[5] = {4, 5, 3, 2, 5};
+    int tab2[] = {4, 5, 3, 2, 5};
     for(int i = 0; i<5 ; i++)
     {
         cout << tab2[i] << ", ";
