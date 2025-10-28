@@ -13,7 +13,7 @@ int main()
     }
     cout<<endl;
 
-    //definicja tablicy 2 z lista inicjalizacyjną
+    // definicja tablicy 2 z lista inicjalizacyjną
     int tab2[] = {4, 5, 3, 2, 5};
     for(int i = 0; i<5 ; i++)
     {
@@ -21,13 +21,15 @@ int main()
     }
     cout<<endl;
 
-    //definicja tablicy 3 z lista inicjalizacyjną
+    // definicja tablicy 3 z lista inicjalizacyjną
     int tab3[10] = {4, 5, 3, 2, 5};
     for(int i = 0; i<10 ; i++)
     {
         cout << tab3[i] << ", ";
     }
     cout<<endl;
+
+  
 
     return 0;
 }
