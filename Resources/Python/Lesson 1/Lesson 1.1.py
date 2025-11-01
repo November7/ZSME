@@ -40,3 +40,4 @@ print(result)
 
 # Wywołanie funkcji bez przypisywania wyniku do zmiennej
 print(Add(10, 20))
+
