@@ -22,4 +22,15 @@ int main()
 
     // min i max
 
+    int max = dane[0];
+    for (int i = 1 ; i<10 ; i++)
+    {
+        if(dane[i] > max)
+        {
+            max = dane[i];
+        }
+    }
+    cout<<endl<<"Najwieksza wartosc to: "<<max <<endl;
+
+
 }
