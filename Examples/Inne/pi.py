@@ -38,9 +38,6 @@ def alignCText(text: str, width: int, align: str = '^') -> str:
 def line(left: str, mid: str, right: str) -> str:
     return left + mid.join('─' * w for w in COL_WIDTHS) + right
 
-# def header(cells:list[str], align: str = '^') -> str:
-#     return '│' + ''.join(f' {cell:{align}{w-2}} │' for cell, w in zip(cells, COL_WIDTHS))
-
 def header(cells: list[str], align: str = '^') -> str:
     return '│ ' + ' '.join(alignCText(cell, w-2, align) + ' │' for cell, w in zip(cells, COL_WIDTHS))
 
