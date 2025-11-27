@@ -19,13 +19,6 @@ def vlen(text: str) -> int:
         text = text.replace(seq, '')
     return len(text)
 
-def centerCText(text: str, width: int) -> str:
-    strlen = vlen(text)
-    if strlen >= width:
-        return text
-    pad = width - strlen
-    return ' ' * (pad // 2) + text + ' ' * (pad - pad // 2)
-
 def alignCText(text: str, width: int, align: str = '^') -> str:
     strlen = vlen(text)
     if strlen >= width:
@@ -45,16 +38,18 @@ def alignCText(text: str, width: int, align: str = '^') -> str:
 def line(left: str, mid: str, right: str) -> str:
     return left + mid.join('─' * w for w in COL_WIDTHS) + right
 
-def header(cells:list[str], align: str = '^') -> str:
-    return '│' + ''.join(f' {cell:{align}{w-2}} │' for cell, w in zip(cells, COL_WIDTHS))
-    
+# def header(cells:list[str], align: str = '^') -> str:
+#     return '│' + ''.join(f' {cell:{align}{w-2}} │' for cell, w in zip(cells, COL_WIDTHS))
+
+def header(cells: list[str], align: str = '^') -> str:
+    return '│ ' + ' '.join(alignCText(cell, w-2, align) + ' │' for cell, w in zip(cells, COL_WIDTHS))
 
 def main():
     inside = total = 0
     strEPI = ''
     maxTime = 0.1
     strPI = f'{math.pi:.15f}'
-    align = '<'
+    align = '^'
 
     print('Enter maximum time for estimating π: ', end='')
     try:
@@ -94,10 +89,7 @@ def main():
             f' {error:{align}{COL_WIDTH-2}.9f} ',
             f' {remaining:{align}{COL_WIDTH-2}.2f} '
         ]
-
-        # cols = [f'{total:^{COL_WIDTH-2}} ', f' {(f'({x:.4f}, {y:.4f})'):^{COL_WIDTH-2}} ', f' {centerCText(cPI, COL_WIDTH-2)} ', f' {error:^{COL_WIDTH-2}.15f} ', f' {remaining:^{COL_WIDTH-2}.2f}']
         print(f'\r│{('│'.join(cols))}│', end='', flush=True)
-        # print(f'\r│' + '│'.join(cols) + '│', end='', flush=True)
 
     print()
     print(line('├', '┴', '┤'))
