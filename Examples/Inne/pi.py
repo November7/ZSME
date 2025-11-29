@@ -78,15 +78,15 @@ def main():
         strEPI = f'{ePI:.15f}'
         cPI = matchedPI(strEPI, strPI)
         remaining = maxTime - elapsed
-
-        cols = [
-            f' {total:{align}{COL_WIDTH-2}} ',
-            f' {(f'({x:.4f}, {y:.4f}) '):{align}{COL_WIDTH-2}} ',
-            f' {alignCText(cPI, COL_WIDTH-2, align=align)} ',
-            f' {error:{align}{COL_WIDTH-2}.9f} ',
-            f' {remaining:{align}{COL_WIDTH-2}.2f} '
-        ]
-        print(f'\r│{('│'.join(cols))}│', end='', flush=True)
+        if total % 1000 == 0:
+            cols = [
+                f' {total:{align}{COL_WIDTH-2}} ',
+                f' {(f'({x:.4f}, {y:.4f}) '):{align}{COL_WIDTH-2}} ',
+                f' {alignCText(cPI, COL_WIDTH-2, align=align)} ',
+                f' {error:{align}{COL_WIDTH-2}.9f} ',
+                f' {remaining:{align}{COL_WIDTH-2}.2f} '
+            ]
+            print(f'\r│{('│'.join(cols))}│', end='', flush=True)
 
     print()
     print(line('├', '┴', '┤'))
