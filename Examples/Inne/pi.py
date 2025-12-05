@@ -1,61 +1,99 @@
 import random
 import math
+import time
 
-inside = 0
-all = 0
+COLOR_GREEN = '\033[92m'
+COLOR_RED   = '\033[91m'
+RESET       = '\033[0m'
+ANSI_CODES  = [COLOR_GREEN, COLOR_RED, RESET]
 
-mDigits = 0
-strPI = f"{math.pi:.15f}"
+COL_WIDTH = 22
+COL_WIDTHS = [COL_WIDTH] * 5
 
-print('Enter number of matched digits (default: 3): ', end='')
-try:
-    user_input = input()
-    if user_input.strip():
-        mDigits = int(user_input)
-        if mDigits < 3:
-            mDigits = 3
-        elif mDigits > 15:
-            mDigits = 15
-except ValueError:
-    ... # ignore invalid input and use default
+def matchedPI(epi: str, pi: str) -> str:
+    idx = next((i for i, (e, p) in enumerate(zip(epi, pi)) if e != p), len(epi))
+    return f'{COLOR_GREEN}{epi[:idx]}{RESET}{COLOR_RED}{epi[idx:]}{RESET}'
 
-line = '+--------------+------------------+------------------------+-------------+' 
+def vlen(text: str) -> int:
+    for seq in ANSI_CODES:
+        text = text.replace(seq, '')
+    return len(text)
 
-print(line)
-print(f'| K-iterations | Points (x, y)    | PI:  {strPI} | Total error |')
-print(line)
+def alignCText(text: str, width: int, align: str = '^') -> str:
+    strlen = vlen(text)
+    if strlen >= width:
+        return text
 
-while True:
-    x = random.random()
-    y = random.random()
-    if (x - 0.5)**2 + (y - 0.5)**2 < 0.25:
-        inside += 1
-    all += 1
-    ePI = 4 * inside / all
-    error = math.fabs(ePI - math.pi)
-    
-    strEPI = f'{ePI:.15f}'
-    cPI = ''        
-    strEqual = ''
+    pad = width - strlen
 
-    for t, e in zip(strPI, strEPI):
-        if t == e: strEqual += e                
-        else: break
+    if align == '<':  
+        return text + ' ' * pad
+    elif align == '>': 
+        return ' ' * pad + text
+    else:              
+        left_pad = pad // 2
+        right_pad = pad - left_pad
+        return ' ' * left_pad + text + ' ' * right_pad
 
+def line(left: str, mid: str, right: str) -> str:
+    return left + mid.join('─' * w for w in COL_WIDTHS) + right
 
-    if all % 100 == 0:
-        
-        cPI = f'\033[92m{strEqual}\033[0m'  # zielone dla zgodnych cyfr
-        cPI += f'\033[91m{strEPI[len(strEqual):]}\033[0m'  # czerwone dla reszty
-        print(f"\r| {all//1000:<12d} | ({x:.4f}, {y:.4f}) | est: {cPI} | {error:<0.9f} |", end='', flush=True)
-    
-    if len(strEqual[2:]) >= mDigits:          
-        break
+def header(cells: list[str], align: str = '^') -> str:
+    return '│ ' + ' '.join(alignCText(cell, w-2, align) + ' │' for cell, w in zip(cells, COL_WIDTHS))
 
-print()
-print(line)
-msg = f"Final estimate of PI: {strEPI} after {all} iterations"
+def main():
+    inside = total = 0
+    strEPI = ''
+    maxTime = 0.1
+    strPI = f'{math.pi:.15f}'
+    align = '^'
 
-print(f"| {msg:^{len(line) - 4}} |")
+    print('Enter maximum time for estimating π: ', end='')
+    try:
+        user_input = input().strip()
+        if user_input:
+            maxTime = max(0.1, float(user_input))
+    except ValueError:
+        pass
 
-print(line)
+    t0 = time.time()
+    width = len(line('┌', '┬', '┐'))
+
+    print(line('┌', '┬', '┐'))
+    print(header(['Iterations [k]', 'Points (x, y)', f'π: {strPI}', 'Error', 'Time [s]'], align=align))
+    print(line('├', '┼', '┤'))
+
+    while True:
+        elapsed = time.time() - t0
+        if elapsed >= maxTime:
+            break
+
+        x, y = random.random(), random.random()
+        if x*x + y*y <= 1:
+            inside += 1
+        total += 1
+
+        ePI = 4 * inside / total
+        error = abs(ePI - math.pi)
+        strEPI = f'{ePI:.15f}'
+        cPI = matchedPI(strEPI, strPI)
+        remaining = maxTime - elapsed
+        if total % 1000 == 0:
+            cols = [
+                f' {total:{align}{COL_WIDTH-2}} ',
+                f' {(f'({x:.4f}, {y:.4f}) '):{align}{COL_WIDTH-2}} ',
+                f' {alignCText(cPI, COL_WIDTH-2, align=align)} ',
+                f' {error:{align}{COL_WIDTH-2}.9f} ',
+                f' {remaining:{align}{COL_WIDTH-2}.2f} '
+            ]
+            print(f'\r│{('│'.join(cols))}│', end='', flush=True)
+
+    print()
+    print(line('├', '┴', '┤'))
+
+    final_msg = f' Final estimate of π: {matchedPI(strEPI, strPI)} after {total} iterations '
+    print('│' + alignCText(final_msg, width-2,align=align) + '│')
+    print(line('└', '─', '┘'))
+
+if __name__ == '__main__':
+    main()
