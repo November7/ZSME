@@ -1,11 +1,11 @@
 # Lekcje z programowania w C++
 
 0. Podstawy C++
-    0.1. Hello World!
-    0.2. Parametry funkcji main
-    0.3. Instrukcja preprocesora #define
-    0.4. Nietypowe użycie #define
-    0.5. #include i #define
+    0.1. Hello World!  
+    0.2. Parametry funkcji main  
+    0.3. Instrukcja preprocesora #define  
+    0.4. Nietypowe użycie #define  
+    0.5. #include i #define  
 1. Instrukcje warunkowe
     1.1. Instrukcja if
     1.2. Instrukcja else
