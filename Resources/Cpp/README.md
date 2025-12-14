@@ -1,8 +1,8 @@
 # Lekcje z programowania w C++
 
 0. Podstawy C++
-    0.1. Hello World!
-    0.2. Parametry funkcji main
+    - 0.1. Hello World!
+    - 0.2. Parametry funkcji main
     0.3. Instrukcja preprocesora #define
     0.4. Nietypowe użycie #define
     0.5. #include i #define
