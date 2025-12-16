@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-//definicja funkcji przyjmującej dwa parametry typu int i zwracającej ich sumę
+//definicja funkcji przyjmującej dwa parametry typu int i wyświetlającą ich sumę
 void suma(int a, int b)
 {
     cout << "Suma " << a << " i " << b << " wynosi: " << a + b << endl;
