@@ -1,33 +1,29 @@
 #include <iostream>
 using namespace std;
-
-//funkcja obliczająca potęgę liczby (iteracyjnie)
-int potega(int podstawa, int wykladnik)
+// przeciążanie funkcji suma dla różnych typów danych
+int suma(int a, int b)
 {
-    int wynik = 1;
-    for (int i = 0; i < wykladnik; i++)
-    {
-        wynik *= podstawa;
-    }
-    return wynik;
+   return a + b; 
 }
 
-//funkcja obliczająca potęgę liczby (rekurencyjnie)
-int potegaRek(int podstawa, int wykladnik)
+double suma(double a, double b)
 {
-    if (wykladnik == 0)
-        return 1;
-    else
-        return podstawa * potegaRek(podstawa, wykladnik - 1);
+    return a + b;
 }
 
 int main()
 {
-    int podstawa = 2;
-    int wykladnik = 10;
-    cout << podstawa << " ^ " << wykladnik << " = " << potega(podstawa, wykladnik) << endl;
-    podstawa = 3;
-    wykladnik = 5;
-    cout << podstawa << " ^ " << wykladnik << " = " << potegaRek(podstawa, wykladnik) << endl;
+    int x = 5;
+    int y = 10;
+    cout << "Suma int: " << suma(x, y) << endl;
+    
+    double m = 5.5;
+    double n = 10.3;
+    cout << "Suma double: " << suma(m, n) << endl;
+
+    // niejednoznaczne wywołanie funkcji suma
+    // argumenty różnych typów - kompilator nie wie, której wersji funkcji użyć
+    // cout << "Suma mieszana: " << suma(x, n) << endl; // błąd kompilacji
+
     return 0;
 }
