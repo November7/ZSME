@@ -15,8 +15,8 @@
     2.1. Pętla for  
     2.2. Pętla while  
     2.3. Pętla do..while  
-    2.4. Skok bezwarunkowy  
-    2.5. Instrukcja break i continue  
+    2.4. Instrukcja break i continue  
+    2.5. Skok bezwarunkowy  
 3. Własne funkcje  
     3.1. Deklaracja, definicja i wywołanie funkcji  
     3.2. Przekazywanie argumentów do funkcji  
