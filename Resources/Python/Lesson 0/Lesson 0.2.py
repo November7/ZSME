@@ -1,8 +1,12 @@
-# Zmienne
-
-a = 123
-b = 3.14
-c = "Jakiś tekst"
-d = True
-
-print(a,b,c,d)
+# Komentarz jednolinijkowy rozpoczyna się znakiem # (hash)
+ 
+ 
+'''
+Komentarz wielolinijkowy (w zasadzie tekst/string wielolinijkowy)
+rozpoczyna się trzema znakami apostrofu...
+'''
+ 
+ 
+"""
+albo cudzysłowu
+"""
