@@ -16,6 +16,7 @@ int main()
 
     x.zmiennoprzecinkowa = 3.5f;
     cout << "float: " << x.zmiennoprzecinkowa << endl;
+    cout << "Rozmiar Liczba: " << sizeof(Liczba) << " bajtow" << endl;
 
     return 0;
 }

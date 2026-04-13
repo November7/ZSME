@@ -15,6 +15,7 @@ int main()
     cout << "aktywny: " << f.aktywny << endl;
     cout << "administrator: " << f.administrator << endl;
     cout << "premium: " << f.premium << endl;
+    cout << "Rozmiar Flagi: " << sizeof(Flagi) << " bajtow" << endl;
 
     return 0;
 }

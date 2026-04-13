@@ -41,12 +41,17 @@
     6.2. Pola bitowe  
     6.3. Unie  
     6.4. typedef  
+    6.5. using
 7. Klasy  
-    8.1. Prosta klasa  
-    8.2. Konstruktor i destruktor  
-    8.3. Przeciążanie konstruktora  
-    8.4. Hermetyzacja  
-    8.5. Przeciążanie operatorów  
-    8.6. Dziedziczenie  
-    8.7. Polimorfizm  
+    7.1. Prosta klasa  
+    7.2. Konstruktor i destruktor  
+    7.3. Przeciążanie konstruktora  
+    7.4. Hermetyzacja  
+    7.5. Przeciążanie operatorów  
+    7.6. Dziedziczenie  
+    7.7. Polimorfizm  
 8. Obsługa plików  
+    8.1. Zapis do pliku tekstowego
+    8.2. Odczyt z pliku tekstowego
+    8.3. Jednoczesny zapis i odczyt danych
+    8.4. Dane binarne
