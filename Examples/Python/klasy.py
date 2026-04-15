@@ -22,7 +22,7 @@ class Vehicle:
     
     def drive(self, km):
         if km < 0:
-            raise ValueError('Nie można jeschać ujemną ilość km')
+            raise ValueError('Nie można jechać ujemną ilość km')
         self.__mileage += km
 
     def info(self):
