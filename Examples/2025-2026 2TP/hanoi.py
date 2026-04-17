@@ -5,7 +5,7 @@ import os
 
 def draw(towers, n):
     width = 50
-    os.system('cls' if os.name == 'nt' else 'clear')
+    os.system('cls')
 
     print("\nAktualny stan:")
 
