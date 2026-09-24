@@ -5,22 +5,22 @@
 Zbiór przykładów w C++ uporządkowanych w lekcje i podrozdziały. Katalog obejmuje podstawy języka, instrukcje warunkowe, pętle, funkcje, tablice i wskaźniki, zarządzanie pamięcią, własne typy danych, programowanie obiektowe, obsługę plików, wyjątki, szablony oraz kontenery i algorytmy biblioteki standardowej. Pliki źródłowe służą do nauki i ćwiczeń oraz osadzania przykładów w materiałach dydaktycznych, m.in. w Moodle.
 
 0. Podstawy C++  
-    0.1. Hello World!  
-    0.2. Parametry funkcji main  
-    0.3. Instrukcja preprocesora #define  
-    0.4. Nietypowe użycie #define  
-    0.5. #include i #define  
+    0.1. [Hello World!](Lesson%200/Lesson%200.1.cpp)  
+    0.2. [Parametry funkcji main](Lesson%200/Lesson%200.2.cpp)  
+    0.3. [Instrukcja preprocesora #define](Lesson%200/Lesson%200.3.cpp)  
+    0.4. [Nietypowe użycie #define](Lesson%200/Lesson%200.4.cpp)  
+    0.5. [#include i #define](Lesson%200/Lesson%200.5.h)  
 1. Instrukcje warunkowe  
-    1.1. Instrukcja if  
-    1.2. Instrukcja else  
-    1.3. Zagnieżdżona instrukcja if/else  
-    1.4. Instrukcja swich, case i break  
+    1.1. [Instrukcja if](Lesson%201/Lesson%201.1.cpp)  
+    1.2. [Instrukcja else](Lesson%201/Lesson%201.2.cpp)  
+    1.3. [Zagnieżdżona instrukcja if/else](Lesson%201/Lesson%201.3.cpp)  
+    1.4. [Instrukcja swich, case i break](Lesson%201/Lesson%201.4.cpp)  
 2. Pętle  
-    2.1. Pętla for  
-    2.2. Pętla while  
-    2.3. Pętla do..while  
-    2.4. Instrukcja break i continue  
-    2.5. Skok bezwarunkowy  
+    2.1. [Pętla for](Lesson%202/Lesson%202.1.cpp)  
+    2.2. [Pętla while](Lesson%202/Lesson%202.2.cpp)  
+    2.3. [Pętla do..while](Lesson%202/Lesson%202.3.cpp)  
+    2.4. [Instrukcja break i continue](Lesson%202/Lesson%202.4.cpp)  
+    2.5. [Skok bezwarunkowy](Lesson%202/Lesson%202.5.cpp)  
 3. Własne funkcje  
     3.1. [Deklaracja, definicja i wywołanie funkcji](Lesson%203/Lesson%203.1.cpp)  
     3.2. [Przekazywanie argumentów do funkcji](Lesson%203/Lesson%203.2.cpp)  
