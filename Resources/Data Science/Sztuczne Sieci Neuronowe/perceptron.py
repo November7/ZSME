@@ -15,7 +15,7 @@ class Perceptron:
         
         wSum = 0
         for w, x in zip(self.weights, inputs):            
-            wSum += w*x
+            wSum += w * x
 
         wSum += self.bias
 
@@ -50,7 +50,7 @@ trainingData = [
     # ([0], 1),  
 ]
 
-perceptron = Perceptron(inputSize=3,epochs=1000)
+perceptron = Perceptron(inputSize=3, epochs=1000)
 
 perceptron.train(trainingData)
 

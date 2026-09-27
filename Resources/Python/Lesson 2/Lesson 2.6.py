@@ -4,7 +4,7 @@ print("Hello World!")
  
 #2. Wypisanie kilku tekstów jako osobne argumenty funkcji
 print("\n ---------- Przykład 2 ------------")
-print("Hello","World!")
+print("Hello", "World!")
  
 #3. Kilkukrotne użycie funkcji print:
 print("\n ---------- Przykład 3 ------------")

@@ -1,12 +1,12 @@
 class Osoba:
-    def __init__(self,imie,nazwisko) -> None:
+    def __init__(self, imie, nazwisko) -> None:
         self.pesel = ""
         self.imie = imie
         self.nazwisko = nazwisko
     def Wypisz(self):
         print(f"{self.imie} {self.nazwisko} {self.pesel if self.pesel!='' else '' }")
- 
-    def wprowadzPesel(self,pesel):
+
+    def wprowadzPesel(self, pesel):
         if Osoba.sprawdzPesel(pesel): # Wywołanie metody statycznej
             self.pesel = pesel
  
@@ -21,20 +21,20 @@ class Osoba:
         if len(pesel) != 11: return False
         if not all("0" <= znak <= "9" for znak in pesel): return False
         sum = 0
-        w = [1,3,7,9,1,3,7,9,1,3]        
-        for s,i in zip(pesel[:10],range(10)):
+        w = [1, 3, 7, 9, 1, 3, 7, 9, 1, 3]
+        for s, i in zip(pesel[:10], range(10)):
             if s < '0' or s > '9': return False
-            sum += w[i]*int(s)
-        sum = (10 - sum % 10) % 10        
+            sum += w[i] * int(s)
+        sum = (10 - sum % 10) % 10
         if sum != int(pesel[-1]): return False
-        
-        d = [31,28,31,30,31,30,31,31,30,31,30,31]
+
+        d = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
         rr = int(pesel[0:2])
         mm = int(pesel[2:4])
         dd = int(pesel[4:6])
-        
-        cent = (1 + mm // 20) % 5 
-        mm %= 20 
+
+        cent = (1 + mm // 20) % 5
+        mm %= 20
  
         rrrr = 1800 + 100 * cent + rr
  
@@ -46,7 +46,7 @@ class Osoba:
  
         return True
     
-a = Osoba("Jan","Nowak")
+a = Osoba("Jan", "Nowak")
 a.wprowadzPesel("44051401458")
  
 print(Osoba.sprawdzPesel("44051401458")) #Wywołanie metody statycznej

@@ -39,7 +39,7 @@
 
         Lista1.RemoveAt(5);        
         Console.WriteLine(string.Join(", ", Lista1));
-        Lista1.Insert(0,123);
+        Lista1.Insert(0, 123);
         Console.WriteLine(string.Join(", ", Lista1));
 
         // List<object> Lista2 = new List<object>();
@@ -55,7 +55,7 @@
         }
         Console.WriteLine();
 
-        List<object> Lista3 = [1,2,3,"randomowy tekst",3.123,2,4,5,5];
+        List<object> Lista3 = [1, 2, 3, "randomowy tekst", 3.123, 2, 4, 5, 5];
 
         foreach (var item in Lista3)
         {

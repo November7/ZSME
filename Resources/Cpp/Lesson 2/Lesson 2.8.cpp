@@ -13,6 +13,6 @@ int main()
 	}
 	while (i <= 100);
 
-	cout << "Suma liczb parzystych od 0 do 100 wynosi: " << suma <<endl;
+	cout << "Suma liczb parzystych od 0 do 100 wynosi: " << suma << endl;
 	return 0;
 }

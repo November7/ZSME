@@ -3,11 +3,10 @@ class CExample:
         self.attr = 0 # przykładowy atrybut
  
     def Print(self):     # zwykła metoda
-        print(self.attr) 
- 
+        print(self.attr)
+
     def Hi(argument): # błędna definicja metody statycznej (interpreter nie zwróci błędu, ponieważ uzna ją za zwykłą metodę)
-        print("Hi",argument)
- 
+        print("Hi", argument)
  
 a = CExample()
 a.Print()

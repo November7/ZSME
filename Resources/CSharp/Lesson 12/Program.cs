@@ -20,12 +20,12 @@
         {
             get 
             { 
-                  if(zachowanie == 1) return "Naganne";
-                  else if(zachowanie == 2) return "Nieodpowiednie";
-                  else if(zachowanie == 3) return "Poprawne";
-                  else if(zachowanie == 4) return "Dobre";
-                  else if(zachowanie == 5) return "Bardzo dobre";
-                  else if(zachowanie == 6) return "Wzorowe";
+                  if (zachowanie == 1) return "Naganne";
+                  else if (zachowanie == 2) return "Nieodpowiednie";
+                  else if (zachowanie == 3) return "Poprawne";
+                  else if (zachowanie == 4) return "Dobre";
+                  else if (zachowanie == 5) return "Bardzo dobre";
+                  else if (zachowanie == 6) return "Wzorowe";
                   else return "Brak oceny";
             }
             set

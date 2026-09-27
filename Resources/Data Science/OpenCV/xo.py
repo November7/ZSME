@@ -13,7 +13,7 @@ import os
 # Wejście: obraz w postaci tablicy numpy
 # Wyjście: znormalizowany obraz jako tablica umpy
 
-def Normalize(img, destSize = 512, threshold = 127):
+def Normalize(img, destSize=512, threshold=127):
     ret = cv.resize(img, (destSize, destSize))
     ret = cv.cvtColor(ret, cv.COLOR_BGR2GRAY)
     _, ret = cv.threshold(ret, threshold, 255, cv.THRESH_BINARY)    
@@ -22,7 +22,7 @@ def Normalize(img, destSize = 512, threshold = 127):
 
 #  Wyświetlanie list obrazów 
 
-def PlotImageList(imgList, limit=2, titles = [], figsize=(8, 8)):
+def PlotImageList(imgList, limit=2, titles=[], figsize=(8, 8)):
     if not isinstance(imgList, list):
         raise ValueError("Input is not a list.")
     if not imgList:
@@ -50,7 +50,7 @@ def PlotImageList(imgList, limit=2, titles = [], figsize=(8, 8)):
 
 # Ładowanie obrazów z określonej lokalizacji
 
-def ListImages(path, extensions =  ['.jpg', '.jpeg', '.png', '.bmp']):
+def ListImages(path, extensions=['.jpg', '.jpeg', '.png', '.bmp']):
     ret = []
     for file_name in os.listdir(path):
         if os.path.splitext(file_name)[1].lower() in extensions:
@@ -69,7 +69,7 @@ def Filtering(imgList, filterList):
         filtered.append(ref)
         vals.append(refVal)
         for filter in filterList:
-            fimg = cv.filter2D(src = ref, ddepth = -1, kernel=filter)
+            fimg = cv.filter2D(src=ref, ddepth=-1, kernel=filter)
             filtered.append(fimg)
             vals.append(f"{(fimg.sum() / 255 / refVal):.5}") 
 
@@ -79,7 +79,7 @@ def Filtering(imgList, filterList):
 # Średnia wariancja dla danych z wszystkich pomiarów klasy
 # wyrzucanie co 5 elementu - oryginalny obraz a nie przefiltrowany
 
-def MeanVar(vals, nFilters = 4):
+def MeanVar(vals, nFilters=4):
     vals = [float(v) for i, v in enumerate(vals) if i % (nFilters + 1) != 0]
     matrix = np.reshape(vals, (-1, 4))
     vars = [row.var() for row in matrix]

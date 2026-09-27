@@ -1,4 +1,4 @@
-with open('plik.txt','r',encoding='utf-8') as file:
+with open('plik.txt', 'r', encoding='utf-8') as file:
     #odczyt całego pliku
     content = file.read()
     print(content, end='')
@@ -9,7 +9,7 @@ with open('plik.txt','r',encoding='utf-8') as file:
     while True:
         f = file.read(1)
         if not f: break
-        print(f,end='')
+        print(f, end='')
  
     file.seek(0) #ustawienie 'wskaźnika' w pliku na początek
  
@@ -34,4 +34,4 @@ with open('plik.txt','r',encoding='utf-8') as file:
 with open('out.txt', 'w', encoding="utf-8") as file:
     tekst = "jakiś przykładowy tekst"
     file.write(tekst)
-    file.writelines(["tekst 1","tekst 2","tekst3"])
+    file.writelines(["tekst 1", "tekst 2", "tekst3"])

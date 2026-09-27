@@ -10,9 +10,9 @@
         let arr = []
         console.log(`Arr 1: ${arr}, Rozmiar ${arr.length}`);
         
-        for(let i = 0 ; i < 10 ; i++)
+        for (let i = 0; i < 10; i++)
         {
-            arr[i] = parseInt(100*Math.random());   
+            arr[i] = parseInt(100 * Math.random());
         }
         console.log(`Arr 2: ${arr}, Rozmiar ${arr.length}`);
         
@@ -22,12 +22,12 @@
 
         
         
-        for(let i in arr)
+        for (let i in arr)
         {
             console.log(`${i} -> ${arr[i]}`);
         }
 
-        arr.forEach((element,index) => {
+        arr.forEach((element, index) => {
            console.log(`${index} -> ${element}`); 
         });
     </script>

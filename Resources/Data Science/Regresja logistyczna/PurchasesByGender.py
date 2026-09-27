@@ -18,7 +18,7 @@ dane['Gender'] = dane['Gender'].map(lambda x: 1 if x == "Male" else 0)
 
 print(dane.head())
 
-X = np.array(dane[["Gender","Age","EstimatedSalary"]])
+X = np.array(dane[["Gender", "Age", "EstimatedSalary"]])
 y = np.array(dane["Purchased"])
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.1)
@@ -27,15 +27,15 @@ model = LogisticRegression(max_iter=2000)
 model.fit(X_train, y_train)
 y_pred = model.predict(X_test)
 
-print(model.score(X_train,y_train))
-print(model.score(X_test,y_test))
+print(model.score(X_train, y_train))
+print(model.score(X_test, y_test))
 print(accuracy_score(y_test, y_pred))
 
 print(classification_report(y_test, y_pred))
 
 print(confusion_matrix(y_test, y_pred)) # TN, FP, FN, TP
 
-sn.heatmap(confusion_matrix(y_test, y_pred),annot=True)
+sn.heatmap(confusion_matrix(y_test, y_pred), annot=True)
            
 plt.show()
 

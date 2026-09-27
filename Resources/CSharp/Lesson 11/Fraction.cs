@@ -25,7 +25,7 @@ namespace Fraction
         public CFraction(int numerator, int denominator) : this()
         {
             this.numerator = numerator;
-            if(denominator != 0) this.denominator = denominator;
+            if (denominator != 0) this.denominator = denominator;
         }
 
         public override string ToString()
@@ -35,10 +35,10 @@ namespace Fraction
                 sign = -1;
             string denom;
             denom = sign * Denominator != 1 ? "/" + (sign * Denominator).ToString() : "";
-            return $"{sign*Numerator}{denom}";
+            return $"{sign * Numerator}{denom}";
         }
 
-        public static CFraction operator* (CFraction A, CFraction B)
+        public static CFraction operator *(CFraction A, CFraction B)
         {
             CFraction result = new();
             result.Numerator = A.Numerator * B.Numerator;        
@@ -49,7 +49,7 @@ namespace Fraction
 
         public static CFraction operator++(CFraction A)
         {
-            A.Numerator+=A.Denominator;
+            A.Numerator += A.Denominator;
             return A;
         }
     }

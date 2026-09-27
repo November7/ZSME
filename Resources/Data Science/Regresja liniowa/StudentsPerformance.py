@@ -18,7 +18,7 @@ os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
 ### Wczytanie danych
 
-df = pd.read_csv("StudentsPerformance.csv",delimiter=",", decimal=".")
+df = pd.read_csv("StudentsPerformance.csv", delimiter=",", decimal=".")
 
 
 print(df.columns)
@@ -60,7 +60,7 @@ print(df_ranges.head())
 
 #
 # sns.pairplot(df_ranges,hue='Ranges',palette='coolwarm')
-sns.pairplot(df,hue='Performance Index',palette='coolwarm')
+sns.pairplot(df, hue='Performance Index', palette='coolwarm')
 plt.show()
 
 corr = df.corr()
@@ -68,7 +68,7 @@ plt.figure(figsize=(8, 6))
 sns.heatmap(corr, annot=True, cmap='coolwarm', vmin=-1, vmax=1)
 plt.show()
 
-X = df[['Hours Studied','Previous Scores','Extracurricular Activities','Sleep Hours','Sample Question Papers Practiced']]  
+X = df[['Hours Studied', 'Previous Scores', 'Extracurricular Activities', 'Sleep Hours', 'Sample Question Papers Practiced']]  
 y = df['Performance Index']  
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=22)
@@ -85,7 +85,7 @@ print(model.coef_, model.intercept_)
 
 y_predicted = model.predict(X_test)
 
-comparison_df = pd.DataFrame({'Dane': y_test, 'Przewidywane': y_predicted, 'Różnica': y_predicted-y_test})
+comparison_df = pd.DataFrame({'Dane': y_test, 'Przewidywane': y_predicted, 'Różnica': y_predicted - y_test})
 print(comparison_df.head())
 
 mse = mean_squared_error(y_test, y_predicted)

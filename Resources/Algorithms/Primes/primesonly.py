@@ -5,7 +5,7 @@ timeup = 10  # czas działania programu w sekundach
 start = time.time()
 count = 0
 num = 3  # pierwsza liczba do sprawdzenia 
-primes = [2, ]
+primes = [2,]
 dzielnik = 2
 print(f'Szukam liczb pierwszych przez {timeup} sekund...')
 endTime = start + timeup

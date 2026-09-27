@@ -17,8 +17,8 @@ print(id(123), id(a), id(b), id(c))
 #co ze stringami?
 s1 = "alamakota"
 s2 = "alamakota"
-print(id(s1),id(s2))
- 
+print(id(s1), id(s2))
+
 s3 = "ala ma kota"
 s4 = "ala ma kota"
-print(id(s3),id(s4))
+print(id(s3), id(s4))

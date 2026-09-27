@@ -98,9 +98,9 @@ class App
         //Nadpisanie ustawień regionalnych
 
         double c = 3.14;            
-        Console.WriteLine(c.ToString( "C2", CultureInfo.CreateSpecificCulture("en-US")));
-        Console.WriteLine(c.ToString( "C2", CultureInfo.CreateSpecificCulture("pl-PL")));
-        Console.WriteLine(c.ToString( "N2", CultureInfo.InvariantCulture));
+        Console.WriteLine(c.ToString("C2", CultureInfo.CreateSpecificCulture("en-US")));
+        Console.WriteLine(c.ToString("C2", CultureInfo.CreateSpecificCulture("pl-PL")));
+        Console.WriteLine(c.ToString("N2", CultureInfo.InvariantCulture));
         
     }
 }

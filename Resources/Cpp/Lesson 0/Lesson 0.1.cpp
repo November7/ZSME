@@ -9,7 +9,7 @@ using namespace std;
 int main()
 { 
 /* wysłanie do strumienia wyjściowego tekstu i znacznika końca linii (endl) */
-	cout<<"Hello World"<< endl; 
+	cout << "Hello World" << endl;
  
 /* wartość zwracana - ponadto instrukcja return przerywa działanie funkcji */
 	return 0;

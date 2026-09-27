@@ -25,7 +25,7 @@ class App
     static void Main()
     {
         CFraction c = new ();
-        CFraction d = new (1,-2);
+        CFraction d = new (1, -2);
         CFraction e;
         
         c.Numerator = 5;
@@ -34,7 +34,7 @@ class App
         // e++;
         Console.WriteLine($"{c}, {d}, {e}");
 
-        for(int i=0;i<100;i++)
+        for (int i = 0; i < 100; i++)
         {
             test();  
         }

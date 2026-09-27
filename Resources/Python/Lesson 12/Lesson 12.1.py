@@ -1,7 +1,7 @@
 # funkcja do pobierania liczb
 
-def getInt(prompt:str = '', errorMsg:str =' Value error', tries:int =3) -> int:
-    """Pobiera liczbę całkowitą od użytkownika.    
+def getInt(prompt: str = '', errorMsg: str = ' Value error', tries: int = 3) -> int:
+    """Pobiera liczbę całkowitą od użytkownika.
     prompt - komunikat wyświetlany użytkownikowi
     errorMsg - komunikat wyświetlany w przypadku błędu
     tries - liczba prób podania poprawnej wartości

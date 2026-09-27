@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 
 #1 pobieranie danych
 
-df = pd.read_csv(mf.GetFileFromCurDir("temperature_full.csv"),sep=";",decimal=".")
+df = pd.read_csv(mf.GetFileFromCurDir("temperature_full.csv"), sep=";", decimal=".")
 
 
 #2 Wyświetlanie danych
@@ -27,21 +27,21 @@ df = pd.read_csv(mf.GetFileFromCurDir("temperature_full.csv"),sep=";",decimal=".
 # print(df.head())
 
 #3c
-df.insert(0,"id",range(len(df)))
+df.insert(0, "id", range(len(df)))
 print(df.head())
 
 #3d
-kolumny = ["id","year","month","day","AverageTemperatureFahr","AverageTemperatureUncertaintyFahr","City","country_id","Country","Latitude","Longitude"]
+kolumny = ["id", "year", "month", "day", "AverageTemperatureFahr", "AverageTemperatureUncertaintyFahr", "City", "country_id", "Country", "Latitude", "Longitude"]
 df = df[kolumny]
 # print(df.head())
 
 #3e
-df.rename(columns = {"AverageTemperatureFahr":"AvgTmpF"},inplace=True)
-df.rename(columns = {"AverageTemperatureUncertaintyFahr":"AvgTmpUncF"},inplace=True)
+df.rename(columns={"AverageTemperatureFahr": "AvgTmpF"}, inplace=True)
+df.rename(columns={"AverageTemperatureUncertaintyFahr": "AvgTmpUncF"}, inplace=True)
 # print(df.head())
 
 #3f
-lista_kolumn = ["id","year","month","day","AvgTmpF","AvgTmpUncF","City","Country","Latitude","Longitude"]
+lista_kolumn = ["id", "year", "month", "day", "AvgTmpF", "AvgTmpUncF", "City", "Country", "Latitude", "Longitude"]
 # df = df[["id","year","month","day","AvgTmpF","AvgTmpUncF","City","Country","Latitude","Longitude"]]
 df = df[lista_kolumn]
 # print(df.head())
@@ -53,7 +53,7 @@ df["AvgTmpC"] = df["AvgTmpF"].apply(mf.F2C)
 df["AvgTmpUncC"] = df["AvgTmpUncF"].apply(mf.F2C)
 # print(df.head(20))
 
-df = df[["id","year","month","day","AvgTmpC","AvgTmpUncC","City","Country","Latitude","Longitude"]]
+df = df[["id", "year", "month", "day", "AvgTmpC", "AvgTmpUncC", "City", "Country", "Latitude", "Longitude"]]
 # print(df.head(20))
 
 
@@ -94,7 +94,7 @@ df["AvgTmpC"] = df.groupby(["City", "Country", "month"])["AvgTmpC"].transform(mf
 cond1 = df["AvgTmpC"] > 20
 cond2 = df["AvgTmpC"] < -10
 cond3 = df["Country"] == "Poland"
-print(df[["id","Country","AvgTmpC"]].loc[cond3 & (cond1 | cond2)])
+print(df[["id", "Country", "AvgTmpC"]].loc[cond3 & (cond1 | cond2)])
 
 # #6 Statystyki
 
@@ -132,16 +132,16 @@ print(grupa0)
 # print(grupa3.loc[(1901)])
 
 #8 Wykresy
-dane_w1 = df[["Country","year","month","AvgTmpC"]].loc[df["Country"]=="Poland"]
-dane_w2 = df[["Country","year","month","AvgTmpC"]].loc[df["Country"]=="Sweden"]
-dane_w3 = df[["Country","year","month","AvgTmpC"]].loc[df["Country"]=="France"]
+dane_w1 = df[["Country", "year", "month", "AvgTmpC"]].loc[df["Country"] == "Poland"]
+dane_w2 = df[["Country", "year", "month", "AvgTmpC"]].loc[df["Country"] == "Sweden"]
+dane_w3 = df[["Country", "year", "month", "AvgTmpC"]].loc[df["Country"] == "France"]
 grupa1 = dane_w1.groupby(["year"])["AvgTmpC"].mean()
 grupa2 = dane_w2.groupby(["year"])["AvgTmpC"].mean()
 grupa3 = dane_w3.groupby(["year"])["AvgTmpC"].mean()
 xlabels = grupa1.index.tolist()[::20]
-plt.plot(grupa1.index,grupa1.values,label = "Polska")
-plt.plot(grupa2.index,grupa2.values,label = "Szwecja")
-plt.plot(grupa3.index,grupa3.values,label = "Francja")
+plt.plot(grupa1.index, grupa1.values, label="Polska")
+plt.plot(grupa2.index, grupa2.values, label="Szwecja")
+plt.plot(grupa3.index, grupa3.values, label="Francja")
 plt.title("Średnia temperatura na przestrzeni lat") 
 plt.xticks(xlabels)
 plt.xlabel("Miesiąc") 

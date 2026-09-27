@@ -7,7 +7,7 @@ class CExample:
  
     @staticmethod
     def Hi(argument): # poprawna definicja metody statycznej
-        print("Hi",argument)
+        print("Hi", argument)
  
 a = CExample()
 a.Print()

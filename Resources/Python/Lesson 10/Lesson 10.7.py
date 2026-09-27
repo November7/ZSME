@@ -5,4 +5,4 @@ class CPoint:
  
  
 A = CPoint()
-B = CPoint(1,2)
+B = CPoint(1, 2)

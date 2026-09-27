@@ -32,8 +32,8 @@ public:
 };
 int main()
 {
-    CFraction A(1,2);
-    CFraction B(2,3);
+    CFraction A(1, 2);
+    CFraction B(2, 3);
     A.Print();
     B.Print();
     CFraction C;

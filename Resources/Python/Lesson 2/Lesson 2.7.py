@@ -6,13 +6,13 @@ X = 2 # wielka litera X
 Zmienna1 = 3
 ZmiennaRzeczywista = 3.14
  
-print(x,X,Zmienna1,ZmiennaRzeczywista) #domyślny separator argumentów: spacja
-print(x,X,Zmienna1,ZmiennaRzeczywista, sep="\n") #nowy separator argumentów: znak nowej linii
- 
+print(x, X, Zmienna1, ZmiennaRzeczywista) #domyślny separator argumentów: spacja
+print(x, X, Zmienna1, ZmiennaRzeczywista, sep="\n") #nowy separator argumentów: znak nowej linii
+
 str1 = "zmienna tekstowa1"
 str2 = "zmienna tekstowa2"
- 
-print(str1,str2, sep=", ")
+
+print(str1, str2, sep=", ")
  
 a = 5
 b = -100

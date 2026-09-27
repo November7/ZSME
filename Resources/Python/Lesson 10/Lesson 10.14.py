@@ -1,13 +1,13 @@
 class CExample:
-    def __init__(self,attrib):
+    def __init__(self, attrib):
         self.attrib = attrib
-    
+
     def __str__(self):
         return f"{self.attrib}"
-    
+
     def __int__(self):
         return int(self.attrib)
-    
+
     def __float__(self):
         return float(self.attrib)
  

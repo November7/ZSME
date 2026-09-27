@@ -31,7 +31,7 @@ Console.WriteLine($"{imie} {nazwisko}");
 
 // v5 
 
-Console.WriteLine("{0} {1}",imie,nazwisko);
+Console.WriteLine("{0} {1}", imie, nazwisko);
 
 // Console.WriteLine("{0} {1} {2}",imie,nazwisko); //brak pokrycia dla argumentu {2} - wyjątek
 

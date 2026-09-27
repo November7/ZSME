@@ -39,7 +39,7 @@ def line(left: str, mid: str, right: str) -> str:
     return left + mid.join('─' * w for w in COL_WIDTHS) + right
 
 def header(cells: list[str], align: str = '^') -> str:
-    return '│ ' + ' '.join(alignCText(cell, w-2, align) + ' │' for cell, w in zip(cells, COL_WIDTHS))
+    return '│ ' + ' '.join(alignCText(cell, w - 2, align) + ' │' for cell, w in zip(cells, COL_WIDTHS))
 
 def main():
     inside = total = 0
@@ -69,7 +69,7 @@ def main():
             break
 
         x, y = random.random(), random.random()
-        if x*x + y*y <= 1:
+        if x * x + y * y <= 1:
             inside += 1
         total += 1
 
@@ -80,11 +80,11 @@ def main():
         remaining = maxTime - elapsed
         if total % 1000 == 0:
             cols = [
-                f' {total:{align}{COL_WIDTH-2}} ',
-                f' {(f'({x:.4f}, {y:.4f}) '):{align}{COL_WIDTH-2}} ',
-                f' {alignCText(cPI, COL_WIDTH-2, align=align)} ',
-                f' {error:{align}{COL_WIDTH-2}.9f} ',
-                f' {remaining:{align}{COL_WIDTH-2}.2f} '
+                f' {total:{align}{COL_WIDTH - 2}} ',
+                f' {(f'({x:.4f}, {y:.4f}) '):{align}{COL_WIDTH - 2}} ',
+                f' {alignCText(cPI, COL_WIDTH - 2, align=align)} ',
+                f' {error:{align}{COL_WIDTH - 2}.9f} ',
+                f' {remaining:{align}{COL_WIDTH - 2}.2f} '
             ]
             print(f'\r│{('│'.join(cols))}│', end='', flush=True)
 
@@ -92,7 +92,7 @@ def main():
     print(line('├', '┴', '┤'))
 
     final_msg = f' Final estimate of π: {matchedPI(strEPI, strPI)} after {total} iterations '
-    print('│' + alignCText(final_msg, width-2,align=align) + '│')
+    print('│' + alignCText(final_msg, width - 2, align=align) + '│')
     print(line('└', '─', '┘'))
 
 if __name__ == '__main__':

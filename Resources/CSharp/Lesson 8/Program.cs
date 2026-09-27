@@ -114,7 +114,7 @@ class App
             }
         }
 
-        int [,] arrMatrix2 = {{1,2,3},{4,5,6}};
+        int [,] arrMatrix2 = {{1, 2, 3}, {4, 5, 6}};
 
         for (int i = 0; i < 2; i++)
         {
@@ -135,8 +135,8 @@ class App
         //tablice postrzępione (tablice tablic)
 
         int[][] arrJagged0 = { new int[2], new int[5]}; 
-        int[][] arrJagged1 = { new int[2] {1,2}, new int[5] {1,3,2,4,5}};
-        int[][] arrJagged2 = { new int[] {1,2}, new int[] {1,3,2,4,5}};
+        int[][] arrJagged1 = { new int[2] {1, 2}, new int[5] {1, 3, 2, 4, 5}};
+        int[][] arrJagged2 = { new int[] {1, 2}, new int[] {1, 3, 2, 4, 5}};
 
         foreach (int[] arr in arrJagged1)
         {
@@ -148,14 +148,14 @@ class App
         }       
 
 
-        int[][] arrJagged3 = [[1,2], [1,3,2,4,5]];
+        int[][] arrJagged3 = [[1, 2], [1, 3, 2, 4, 5]];
 
         // int[][] arrJagged3 = {{1,2,3},{4,5,6}}; //niepoprawnie
 
-        int[] t1 = {1,2,3,4,5,6};
+        int[] t1 = {1, 2, 3, 4, 5, 6};
         int[] t2 = t1;
         int[] t3 = new int [6];
-        Array.Copy(t1,t3,6);
+        Array.Copy(t1, t3, 6);
 
         for (int i = 0; i < t1.Length; i++)
         {
@@ -210,6 +210,6 @@ class App
         }
         Console.WriteLine();
 
-        Console.WriteLine($"Pierwsze/ostatnie wystąpienie wartości: {Array.IndexOf(t4,3)} {Array.IndexOf(t4,332)} {Array.LastIndexOf(t4,3)}");        
+        Console.WriteLine($"Pierwsze/ostatnie wystąpienie wartości: {Array.IndexOf(t4, 3)} {Array.IndexOf(t4, 332)} {Array.LastIndexOf(t4, 3)}");        
     }
 }

@@ -15,7 +15,7 @@ przykladowa_funkcja = dekorator(przykladowa_funkcja)
 przykladowa_funkcja()
 
 # Alternatywna składnia z użyciem @
-@dekorator  
+@dekorator
 def inna_funkcja():
     print('Instrukcje innej funkcji')
 

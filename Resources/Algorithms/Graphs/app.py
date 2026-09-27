@@ -1,5 +1,5 @@
 class Point:
-    def __init__(self,name, x, y):
+    def __init__(self, name, x, y):
         self.name = name
         self.x = x
         self.y = y
@@ -10,9 +10,9 @@ class Point:
         return f"{self.name}=({self.x},{self.y})"
     @classmethod
     def from_string(cls, strPoint):        
-        strPoint = strPoint.replace(" ","")
-        strPoint = strPoint.replace("(","")
-        strPoint = strPoint.replace(")","")
+        strPoint = strPoint.replace(" ", "")
+        strPoint = strPoint.replace("(", "")
+        strPoint = strPoint.replace(")", "")
         parsed = strPoint.split("=")
         if len(parsed) != 2:
             return None
@@ -29,15 +29,15 @@ class Point:
         return cls(name, x, y)
 
 
-A = Point("A",1,2)
-B = Point("B",-1,2)
-C = Point("C",1,-2)
+A = Point("A", 1, 2)
+B = Point("B", -1, 2)
+C = Point("C", 1, -2)
 
 
 D = Point.from_string("D=(123,321)")
 
-points = [A,B,C,D]
-connections = [(A,B),(A,C)]
+points = [A, B, C, D]
+connections = [(A, B), (A, C)]
 print(points)
 print(connections)
 

@@ -4,7 +4,7 @@ import math
 
 #funkcja parsująca punkt z postaci string do słownika np. A=(1,2)
 
-def parsePoint(strpoint:str) -> tuple | None:
+def parsePoint(strpoint: str) -> tuple | None:
     strname = strpoint.split('=')[0]
     strpoint = strpoint.split('=')[1]
     coords = eval(strpoint)
@@ -15,10 +15,10 @@ def parsePoint(strpoint:str) -> tuple | None:
         if not isinstance(i, float) and not isinstance(i, int):
             return None
         
-    return  strname,coords
+    return strname, coords
 
 #funkcja licząca odległość między dwoma punktami
-def distance(point1:tuple | None, point2:tuple | None) -> float | None:
+def distance(point1: tuple | None, point2: tuple | None) -> float | None:
     if not isinstance(point1, tuple) or not isinstance(point2, tuple):
         return None
     
@@ -28,7 +28,7 @@ def distance(point1:tuple | None, point2:tuple | None) -> float | None:
 
 
 #budowanie grafu
-def buildGraph(connections:list) -> dict:
+def buildGraph(connections: list) -> dict:
     graph: dict[str, dict[str, float | None]] = {}
     for conn in connections:
         point1, point2 = conn

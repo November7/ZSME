@@ -10,6 +10,6 @@ print("Ocena z języka polskiego: ", j_polski)
 print("Ocena z fizyki: ", fizyka)
 print("Ocena z geografii: ", geografia)
 print("------------------------------------")
-srednia = (matematyka + fizyka + j_polski + geografia)/4
- 
-print("Średnia ocen wynosi: ",srednia)
+srednia = (matematyka + fizyka + j_polski + geografia) / 4
+
+print("Średnia ocen wynosi: ", srednia)

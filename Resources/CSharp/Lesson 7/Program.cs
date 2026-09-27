@@ -77,7 +77,7 @@
 
         for (licznik = 0; licznik < 10; licznik++)
         {
-            if(licznik == 5) break;
+            if (licznik == 5) break;
 
             Console.WriteLine($"Iteracja: {licznik}");
         }   

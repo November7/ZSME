@@ -1,4 +1,4 @@
-lista = [1,2,3,4,5,6,7] #działa dla wszystkich typów agregacyjnych: (), [], {}
+lista = [1, 2, 3, 4, 5, 6, 7] #działa dla wszystkich typów agregacyjnych: (), [], {}
  
 a, b, *reszta, c, d = lista
  

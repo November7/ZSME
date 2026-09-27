@@ -1,7 +1,7 @@
 lista = ["samolot", 100, 33.1]
-zestaw = {"okręt",101,33.2}
-krotka = ("autobus",102,33.3)
-slownik = {"typ":"samochód","marka":"Tesla"}
+zestaw = {"okręt", 101, 33.2}
+krotka = ("autobus", 102, 33.3)
+slownik = {"typ": "samochód", "marka": "Tesla"}
  
 l1, l2, l3 = lista
 z1, z2, z3 = zestaw
@@ -18,6 +18,6 @@ print(z1, z2, z3)
 print(krotka)
 print(k1, k2, k3)
  
-print(slownik) 
+print(slownik)
 print(s1, s2)
 print(slownik[s1], slownik[s2])

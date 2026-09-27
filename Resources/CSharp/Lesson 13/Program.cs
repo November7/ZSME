@@ -21,8 +21,8 @@
             void Init(out int val, int v)
             {
                 //można tylko przypisywać wartość do zmiennej val.
-                if(v<0) val = 0;
-                else if (v>100) val = 100;
+                if (v < 0) val = 0;
+                else if (v > 100) val = 100;
                 else val = v;
                 
             }

@@ -6,7 +6,7 @@
     {
         set
         {
-            if(value > 100)     x = 100;
+            if (value > 100)    x = 100;
             else if (value < 0) x = 0;    
             else                x = value;
         }

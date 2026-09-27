@@ -3,8 +3,8 @@ try:
     pass
 except ZeroDivisionError:
     print("Błąd dzielenia przez zero!")
-except KeyError: 
-    print("Błąd nieprawidłowego klucza!")    
+except KeyError:
+    print("Błąd nieprawidłowego klucza!")
 except Exception:
     print("Dowolny inny błąd, który nie został wcześniej obsłużony")
 else:

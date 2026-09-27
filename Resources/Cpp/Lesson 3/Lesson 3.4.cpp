@@ -3,7 +3,7 @@ using namespace std;
 // przeciążanie funkcji suma dla różnych typów danych
 int suma(int a, int b)
 {
-   return a + b; 
+    return a + b;
 }
 
 double suma(double a, double b)
