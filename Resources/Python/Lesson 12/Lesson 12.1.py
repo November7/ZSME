@@ -18,6 +18,6 @@ def getInt(prompt:str = '', errorMsg:str =' Value error', tries:int =3) -> int:
 # zapis do pliku
 
 n = getInt('Ile liczb chcesz zapisać do pliku? ', 'To nie jest liczba całkowita!', 2)
-with open('data.txt', 'w') as file:
+with open('data.txt', 'w', encoding="utf-8") as file:
     for i in range(n):
         file.write(f'{i}\n')

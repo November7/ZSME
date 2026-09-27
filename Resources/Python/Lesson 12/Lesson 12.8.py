@@ -1,0 +1,3 @@
+with open('plik.txt', "r", encoding="utf-8") as f:
+    # operacje na pliku
+    ...

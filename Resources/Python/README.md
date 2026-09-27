@@ -1,1 +1,114 @@
-# Programowanie w języku Python
+# Lekcje z programowania w Pythonie
+
+[![AI Generated](https://img.shields.io/badge/README-AI%20Generated-4B8BF5?style=flat&logo=githubcopilot&logoColor=white)](#)
+
+Zbiór przykładów Pythona uporządkowanych w lekcje i podrozdziały. Katalog obejmuje podstawy języka, instrukcje warunkowe, pętle, kolekcje, funkcje, moduły, generatory, klasy, dekoratory, wyjątki, pliki, podstawy pandas, JSON i testowanie. Pliki służą do nauki i ćwiczeń oraz osadzania kodu w książce Moodle.
+
+0. Pierwsze programy i komentarze  
+    0.1. [Hello World!](Lesson%200/Lesson%200.1.py)  
+    0.2. [Komentarze i napisy wielowierszowe](Lesson%200/Lesson%200.2.py)  
+    0.3. [Informacje o interpreterze](Lesson%200/Lesson%200.3.py)  
+1. Wprowadzenie do funkcji  
+    1.1. [Definiowanie funkcji, parametry i wartości zwracane](Lesson%201/Lesson%201.1.py)  
+2. Wyświetlanie danych, zmienne i dane wejściowe  
+    2.1. [print — krótkie podsumowanie](Lesson%202/Lesson%202.1.py)  
+    2.2. [Zmienne i podstawowe typy](Lesson%202/Lesson%202.2.py)  
+    2.3. [input, konwersja i f-stringi](Lesson%202/Lesson%202.3.py)  
+    2.4. [Powitanie z danych zapisanych w programie](Lesson%202/Lesson%202.4.py)  
+    2.5. [Pobieranie imienia](Lesson%202/Lesson%202.5.py)  
+    2.6. [print, sep, end i nowe wiersze](Lesson%202/Lesson%202.6.py)  
+    2.7. [Tworzenie zmiennych](Lesson%202/Lesson%202.7.py)  
+    2.8. [Wartość, typ i tożsamość obiektu](Lesson%202/Lesson%202.8.py)  
+    2.9. [Współdzielenie liczb i napisów — dla chętnych](Lesson%202/Lesson%202.9.py)  
+3. Operacje arytmetyczne i tekstowe  
+    3.1. [Operatory arytmetyczne — podsumowanie](Lesson%203/Lesson%203.1.py)  
+    3.2. [Operacje na napisach](Lesson%203/Lesson%203.2.py)  
+    3.3. [Operatory arytmetyczne krok po kroku](Lesson%203/Lesson%203.3.py)  
+    3.4. [Średnia ocen](Lesson%203/Lesson%203.4.py)  
+4. Instrukcje warunkowe i pętle  
+    4.1. [Warunki — podsumowanie](Lesson%204/Lesson%204.1.py)  
+    4.2. [Pętle i continue — podsumowanie](Lesson%204/Lesson%204.2.py)  
+    4.3. [Sprawdzenie dzielnika](Lesson%204/Lesson%204.3.py)  
+    4.4. [if, elif i else](Lesson%204/Lesson%204.4.py)  
+    4.5. [Wyrażenie warunkowe i parzystość](Lesson%204/Lesson%204.5.py)  
+    4.6. [while — licznik](Lesson%204/Lesson%204.6.py)  
+    4.7. [while — potęgi dwójki](Lesson%204/Lesson%204.7.py)  
+    4.8. [for i range](Lesson%204/Lesson%204.8.py)  
+    4.9. [Przeglądanie listy](Lesson%204/Lesson%204.9.py)  
+5. Typy agregacyjne  
+    5.1. [Metody listy — podsumowanie](Lesson%205/Lesson%205.1.py)  
+    5.2. [Krotka, zbiór i słownik](Lesson%205/Lesson%205.2.py)  
+    5.3. [Lista i odczyt elementów](Lesson%205/Lesson%205.3.py)  
+    5.4. [Dodawanie, usuwanie i sortowanie](Lesson%205/Lesson%205.4.py)  
+    5.5. [Krotka i jej niezmienność](Lesson%205/Lesson%205.5.py)  
+    5.6. [Rozmiar i czas przeglądania — dla chętnych](Lesson%205/Lesson%205.6.py)  
+6. Generowanie danych, indeksy i rozpakowywanie  
+    6.1. [Indeksy i rozpakowanie — podsumowanie](Lesson%206/Lesson%206.1.py)  
+    6.2. [Wyrażenia listowe i słownikowe](Lesson%206/Lesson%206.2.py)  
+    6.3. [Tworzenie i filtrowanie list](Lesson%206/Lesson%206.3.py)  
+    6.4. [Indeksy dodatnie i ujemne](Lesson%206/Lesson%206.4.py)  
+    6.5. [Wycinki i ich modyfikowanie](Lesson%206/Lesson%206.5.py)  
+    6.6. [Rozpakowanie kolekcji](Lesson%206/Lesson%206.6.py)  
+    6.7. [Rozpakowanie z gwiazdką](Lesson%206/Lesson%206.7.py)  
+    6.8. [Pierwsze, ostatnie i pozostałe elementy](Lesson%206/Lesson%206.8.py)  
+7. Własne funkcje i argumenty  
+    7.1. [Wartości domyślne i wskazówki typów](Lesson%207/Lesson%207.1.py)  
+    7.2. [Argumenty pozycyjne, nazwane i *args](Lesson%207/Lesson%207.2.py)  
+    7.3. [Definicja i wywołanie funkcji](Lesson%207/Lesson%207.3.py)  
+    7.4. [Funkcja z parametrem](Lesson%207/Lesson%207.4.py)  
+    7.5. [Zwracanie wartości przez return](Lesson%207/Lesson%207.5.py)  
+8. Moduły  
+    8.1. [Moduły math i pathlib](Lesson%208/Lesson%208.1.py)  
+    8.2. [Własny moduł i __main__](Lesson%208/Lesson%208.2.py)  
+9. Słowniki i generatory  
+    9.1. [Słownik, items, get i setdefault](Lesson%209/Lesson%209.1.py)  
+    9.2. [Generatory i yield](Lesson%209/Lesson%209.2.py)  
+10. Klasy  
+    10.1. [Atrybuty klasy i instancji](Lesson%2010/Lesson%2010.1.py)  
+    10.2. [Metody na przykładzie punktu](Lesson%2010/Lesson%2010.2.py)  
+    10.3. [Dziedziczenie i super](Lesson%2010/Lesson%2010.3.py)  
+    10.4. [Klasy danych — dataclass](Lesson%2010/Lesson%2010.4.py)  
+    10.5. [Starszy szkic introspekcji — zastąpiony w książce przez 10.13](Lesson%2010/Lesson%2010.5.py)  
+    10.6. [Pusta klasa i instancja](Lesson%2010/Lesson%2010.6.py)  
+    10.7. [Inicjalizacja i parametry domyślne](Lesson%2010/Lesson%2010.7.py)  
+    10.8. [Brak self i dekoratora — demonstracja pułapki](Lesson%2010/Lesson%2010.8.py)  
+    10.9. [Automatyczne przekazywanie instancji](Lesson%2010/Lesson%2010.9.py)  
+    10.10. [Metoda statyczna](Lesson%2010/Lesson%2010.10.py)  
+    10.11. [Metody statyczne i sprawdzanie danych](Lesson%2010/Lesson%2010.11.py)  
+    10.12. [getattr i setattr](Lesson%2010/Lesson%2010.12.py)  
+    10.13. [Introspekcja prostej klasy — dla chętnych](Lesson%2010/Lesson%2010.13.py)  
+    10.14. [Konwersje str, int i float](Lesson%2010/Lesson%2010.14.py)  
+    10.15. [Porównanie obiektów przez __eq__](Lesson%2010/Lesson%2010.15.py)  
+    10.16. [Operatory na ułamkach](Lesson%2010/Lesson%2010.16.py)  
+11. Funkcje jako obiekty, dekoratory i rekurencja  
+    11.1. [Funkcja jako argument](Lesson%2011/Lesson%2011.1.py)  
+    11.2. [Funkcja zwracająca funkcję](Lesson%2011/Lesson%2011.2.py)  
+    11.3. [Prosty dekorator](Lesson%2011/Lesson%2011.3.py)  
+    11.4. [Dekorator mierzący czas](Lesson%2011/Lesson%2011.4.py)  
+    11.5. [Rekurencja i silnia](Lesson%2011/Lesson%2011.5.py)  
+12. Wyjątki i obsługa plików  
+    12.1. [Pobieranie liczb i zapis do pliku](Lesson%2012/Lesson%2012.1.py)  
+    12.2. [Wyjątki: try, except, else i finally](Lesson%2012/Lesson%2012.2.py)  
+    12.3. [Zapis i odczyt tekstu UTF-8](Lesson%2012/Lesson%2012.3.py)  
+    12.4. [Obsługa dzielenia przez zero](Lesson%2012/Lesson%2012.4.py)  
+    12.5. [Różne typy wyjątków](Lesson%2012/Lesson%2012.5.py)  
+    12.6. [Schemat obsługi wyjątków](Lesson%2012/Lesson%2012.6.py)  
+    12.7. [Ręczne otwarcie i zamknięcie pliku](Lesson%2012/Lesson%2012.7.py)  
+    12.8. [Konstrukcja with](Lesson%2012/Lesson%2012.8.py)  
+    12.9. [Jawne kodowanie UTF-8](Lesson%2012/Lesson%2012.9.py)  
+    12.10. [Odczyt całej zawartości](Lesson%2012/Lesson%2012.10.py)  
+    12.11. [Utworzenie pliku tekstowego](Lesson%2012/Lesson%2012.11.py)  
+    12.12. [Sposoby odczytu, seek i zapis](Lesson%2012/Lesson%2012.12.py)  
+13. Biblioteka pandas  
+    13.1. [Series i DataFrame — podsumowanie](Lesson%2013/Lesson%2013.1.py)  
+    13.2. [Filtrowanie wierszy i szkic importu CSV](Lesson%2013/Lesson%2013.2.py)  
+    13.3. [Import pandas i wersja biblioteki](Lesson%2013/Lesson%2013.3.py)  
+    13.4. [Series z listy](Lesson%2013/Lesson%2013.4.py)  
+    13.5. [DataFrame ze słownika](Lesson%2013/Lesson%2013.5.py)  
+    13.6. [head, tail, loc i iloc](Lesson%2013/Lesson%2013.6.py)  
+    13.7. [Import danych z CSV](Lesson%2013/Lesson%2013.7.py)  
+14. JSON i podstawowe testowanie  
+    14.1. [JSON i serializacja](Lesson%2014/Lesson%2014.1.py)  
+    14.2. [Testowanie przez assert](Lesson%2014/Lesson%2014.2.py)  
+15. Projekt podsumowujący  
+    15.1. [Projekt podsumowujący — oceny uczniów](Lesson%2015/Lesson%2015.1.py)  
