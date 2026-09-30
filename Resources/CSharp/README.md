@@ -2,8 +2,6 @@
 
 [![AI Generated](https://img.shields.io/badge/README-AI%20Generated-4B8BF5?style=flat&logo=githubcopilot&logoColor=white)](#)
 
-Materiały wprowadzają do programowania w C# na przykładach konsolowych. Każdy katalog `Lesson N` jest osobnym projektem; przykłady można uruchomić przez `dotnet run --project "Lesson N/Lesson N.csproj"`.
-
 ## Lekcje
 
 1. [Pierwszy program i podstawy konsoli](Lesson%201/Program.cs)
@@ -23,6 +21,3 @@ Materiały wprowadzają do programowania w C# na przykładach konsolowych. Każd
 15. [Obsługa plików i wyjątków](Lesson%2015/Program.cs)
 16. [Metody generyczne, kolekcje i LINQ](Lesson%2016/Program.cs)
 
-## Odpowiedniki tematów z C++
-
-Instrukcje, pętle, funkcje, tablice, klasy i kolekcje mają swoje przykłady w powyższych lekcjach. C# zarządza pamięcią automatycznie, dlatego przykłady z ręcznym `new`/`delete`, wskaźnikami i RAII z kursu C++ nie mają bezpośredniego odpowiednika dla początkujących. Szablony generyczne C++ odpowiadają w przybliżeniu typom i metodom generycznym C# (lekcja 16). Preprocesor, unie i pola bitowe są specyficzne dla C++ i nie są kopiowane.
