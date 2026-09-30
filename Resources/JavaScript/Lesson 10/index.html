@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lekcja 10 - JSDoc</title>
+</head>
+<body>
+    <script>
+        /**
+         * Zwraca pierwszy element kolekcji dowolnego typu.
+         * @template T
+         * @param {T[]} items
+         * @returns {T | undefined}
+         */
+        function first(items) {
+            return items[0];
+        }
+
+        console.log(first([10, 20, 30]));
+        console.log(first(["Ala", "Ola"]));
+
+        function identity(value) {
+            return value;
+        }
+
+        console.log(identity({ active: true }));
+    </script>
+</body>
+</html>

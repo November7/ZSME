@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lekcja 4 - Tablice i referencje</title>
+</head>
+<body>
+    <script>
+        const numbers = [10, 20, 30];
+        console.log(`Pierwszy element: ${numbers[0]}`);
+        console.log(`Długość: ${numbers.length}`);
+
+        const sameArray = numbers;
+        sameArray[0] = 99;
+        console.log(`Zmiana przez drugą referencję: ${numbers}`);
+
+        const copy = [...numbers];
+        copy.push(40);
+        console.log(`Oryginał: ${numbers}; kopia: ${copy}`);
+
+        const matrix = [[1, 2], [3, 4]];
+        console.log(`Element macierzy: ${matrix[1][0]}`);
+
+        const bytes = new Uint8Array([1, 2, 255]);
+        console.log(`Tablica typowana: ${bytes}`);
+    </script>
+</body>
+</html>

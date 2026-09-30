@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lekcja 6 - Obiekty i typy</title>
+</head>
+<body>
+    <script>
+        const student = {
+            name: "Ala",
+            grade: 5,
+            introduce() {
+                return `${this.name}, ocena: ${this.grade}`;
+            }
+        };
+
+        console.log(student.introduce());
+        student.grade = 6;
+        console.log(student.introduce());
+
+        const Color = Object.freeze({ Red: "red", Green: "green", Blue: "blue" });
+        console.log(`Wybrany kolor: ${Color.Green}`);
+
+        const { name, grade } = student;
+        console.log(`${name}: ${grade}`);
+    </script>
+</body>
+</html>

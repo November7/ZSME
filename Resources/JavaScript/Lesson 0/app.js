@@ -1,5 +1,5 @@
 function Main()
 {
-    let contenet = "<strong>Hellow World!</strong>";
-    document.writeln(contenet);
+    const content = "<strong>Hello World!</strong>";
+    document.body.insertAdjacentHTML("beforeend", content);
 }

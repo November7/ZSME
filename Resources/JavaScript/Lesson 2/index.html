@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lekcja 2 - Pętle</title>
+</head>
+<body>
+    <script>
+        for (let index = 0; index < 5; index++) {
+            console.log(`for: ${index}`);
+        }
+
+        let counter = 0;
+        while (counter < 3) {
+            console.log(`while: ${counter}`);
+            counter++;
+        }
+
+        let attempts = 0;
+        do {
+            console.log(`do...while: ${attempts}`);
+            attempts++;
+        } while (attempts < 2);
+
+        for (let value = 0; value < 8; value++) {
+            if (value === 2) continue;
+            if (value === 6) break;
+            console.log(`Wartość: ${value}`);
+        }
+    </script>
+</body>
+</html>

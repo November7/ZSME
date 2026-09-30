@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lekcja 8 - Pliki w przeglądarce</title>
+</head>
+<body>
+    <label for="file">Wybierz plik tekstowy:</label>
+    <input id="file" type="file" accept="text/*">
+    <pre id="contents"></pre>
+    <script>
+        const fileInput = document.querySelector("#file");
+        const output = document.querySelector("#contents");
+
+        fileInput.addEventListener("change", async () => {
+            const [file] = fileInput.files;
+            if (!file) return;
+
+            output.textContent = await file.text();
+            console.log(`Nazwa: ${file.name}; rozmiar: ${file.size} B`);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lekcja 12 - Napisy i iteratory</title>
+</head>
+<body>
+    <script>
+        const text = "Ala ma kota";
+        console.log(`Długość: ${text.length}`);
+        console.log(`Fragment: ${text.slice(0, 3)}`);
+        console.log(`Słowa: ${text.split(" ").join(" | ")}`);
+
+        const numbers = [5, 2, 8, 1, 4];
+        const sorted = [...numbers].sort((a, b) => a - b);
+        const doubled = sorted.map((number) => number * 2);
+        const even = doubled.filter((number) => number % 2 === 0);
+        const total = even.reduce((sum, number) => sum + number, 0);
+
+        console.log(`Posortowane: ${sorted}`);
+        console.log(`Parzyste podwojone: ${even}; suma: ${total}`);
+
+        for (const character of text) {
+            console.log(character);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lekcja 7 - Klasy</title>
+</head>
+<body>
+    <script>
+        class Point {
+            constructor(x, y) {
+                this.x = x;
+                this.y = y;
+            }
+
+            toString() {
+                return `(${this.x}, ${this.y})`;
+            }
+        }
+
+        class Point3D extends Point {
+            constructor(x, y, z) {
+                super(x, y);
+                this.z = z;
+            }
+
+            toString() {
+                return `(${this.x}, ${this.y}, ${this.z})`;
+            }
+        }
+
+        const point = new Point(2, 3);
+        const point3D = new Point3D(2, 3, 4);
+        console.log(point.toString());
+        console.log(point3D.toString());
+    </script>
+</body>
+</html>

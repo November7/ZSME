@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lekcja 11 - Kolekcje</title>
+</head>
+<body>
+    <script>
+        const values = [4, 1, 4, 2];
+        values.push(3);
+        console.log(`Tablica: ${values}; rozmiar: ${values.length}`);
+
+        const unique = new Set(values);
+        console.log(`Unikalne wartości: ${[...unique]}`);
+
+        const grades = new Map([["Ala", 5], ["Jan", 4]]);
+        grades.set("Ola", 6);
+        for (const [name, grade] of grades) {
+            console.log(`${name}: ${grade}`);
+        }
+
+        const stack = [];
+        stack.push("pierwszy", "drugi");
+        console.log(`Stos, zdjęto: ${stack.pop()}`);
+
+        const queue = ["pierwszy", "drugi"];
+        console.log(`Kolejka, zdjęto: ${queue.shift()}`);
+    </script>
+</body>
+</html>

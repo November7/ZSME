@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lekcja 9 - Wyjątki</title>
+</head>
+<body>
+    <script>
+        function parsePositiveInteger(text) {
+            const value = Number(text);
+            if (!Number.isInteger(value)) {
+                throw new TypeError("Wartość musi być liczbą całkowitą.");
+            }
+            if (value <= 0) {
+                throw new RangeError("Wartość musi być dodatnia.");
+            }
+            return value;
+        }
+
+        for (const input of ["12", "abc", "0"]) {
+            try {
+                console.log(parsePositiveInteger(input));
+            } catch (error) {
+                console.log(`${error.name}: ${error.message}`);
+            } finally {
+                console.log(`Sprawdzono: ${input}`);
+            }
+        }
+    </script>
+</body>
+</html>
